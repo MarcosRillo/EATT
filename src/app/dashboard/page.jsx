@@ -22,7 +22,7 @@ function DashboardPage() {
           variant="contained"
           color="primary"
           component={Link}
-          href="/dashboard/add-event"
+          href="/dashboard/addEvent"
         >
           Agregar Nuevo Evento
         </Button>

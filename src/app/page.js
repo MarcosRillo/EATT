@@ -1,5 +1,5 @@
-"use client"
-import Calendar from "@/components/calendar/Calendar"; // Ajusta la ruta si es necesario
+"use client";
+import PublicCalendar from "@/components/calendar/Calendar"; // Ajusta la ruta si es necesario
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button"; // Importa el componente Button
@@ -19,8 +19,8 @@ export default function Home() {
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Agenda Cultural de Tucumán
+          <Typography variant="h5" component="h5" gutterBottom>
+            EATT & TCVB | Agenda de Eventos
           </Typography>
         </Grid>
         <Grid item>
@@ -33,7 +33,7 @@ export default function Home() {
           </Button>
         </Grid>
       </Grid>
-      <Calendar sx={{ mt: 2 }} events={events}/> {/* Renderiza el componente Calendar */}
+      <PublicCalendar />
     </Container>
   );
 }

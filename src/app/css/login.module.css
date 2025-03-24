@@ -1,0 +1,48 @@
+.overlayStyle {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  background-color: #07476b;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+}
+
+.formContainerStyle {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  overflow-y: auto;
+  padding: 20px;
+  color: #07476b;
+  background-color: #ffffff;
+}
+
+.backButtonStyle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  background-color: #07476b; /* Fondo negro semi-transparente */
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem; /* Un poco más pequeño */
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  padding: 6px; /* Un poco menos de padding */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.backButtonStyle:hover {
+  background-color: #f3faff; /* Oscurecer un poco al pasar el mouse */
+}
