@@ -8,6 +8,8 @@ import {
   momentLocalizer,
 } from "react-big-calendar";
 import moment from "moment";
+import "moment/locale/es";
+moment.locale("es");
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useEvents } from "@/app/context/EventContext"; // Ajusta la ruta si es necesario
 import {
@@ -22,13 +24,13 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import GoogleMap from "@/components/googleMap/GoogleMap"; // Componente opcional para el mapa
 
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import RoomIcon from '@mui/icons-material/Room'; // O el icono de ubicación que prefieras
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import CategoryIcon from '@mui/icons-material/Category';
-import LinkIcon from '@mui/icons-material/Link';
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import ScheduleIcon from "@mui/icons-material/Schedule";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import RoomIcon from "@mui/icons-material/Room"; // O el icono de ubicación que prefieras
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import CategoryIcon from "@mui/icons-material/Category";
+import LinkIcon from "@mui/icons-material/Link";
 
 const localizer = momentLocalizer(moment);
 
@@ -36,6 +38,21 @@ function PublicCalendar() {
   const { events } = useEvents();
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+
+  const mensajesEnEspanol = {
+    allDay: "Todo el día",
+    previous: "Anterior",
+    next: "Siguiente",
+    today: "Hoy",
+    month: "Mes",
+    week: "Semana",
+    day: "Día",
+    agenda: "Agenda",
+    date: "Fecha",
+    time: "Hora",
+    event: "Evento",
+    showMore: (total) => `+(${total}) más`,
+  };
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
@@ -69,6 +86,7 @@ function PublicCalendar() {
         }}
         onSelectEvent={handleEventClick}
         style={{ width: "100%", height: "100%" }}
+        messages={mensajesEnEspanol}
       />
       <Dialog
         open={openModal}
@@ -210,4 +228,3 @@ function PublicCalendar() {
 }
 
 export default PublicCalendar;
-
