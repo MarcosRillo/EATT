@@ -11,7 +11,7 @@ import moment from "moment";
 import "moment/locale/es";
 moment.locale("es");
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { useEvents } from "@/app/context/EventContext"; 
+import { useEvents } from "@/app/context/EventContext";
 import {
   Dialog,
   DialogTitle,
@@ -22,15 +22,16 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import GoogleMap from "@/components/googleMap/GoogleMap"; 
+import GoogleMap from "@/components/googleMap/GoogleMap";
 
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import RoomIcon from "@mui/icons-material/Room"; 
+import RoomIcon from "@mui/icons-material/Room";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CategoryIcon from "@mui/icons-material/Category";
 import LinkIcon from "@mui/icons-material/Link";
+import styles from "@/components/calendar/Calendar.modules.css";
 
 const localizer = momentLocalizer(moment);
 
@@ -65,7 +66,7 @@ function PublicCalendar() {
   };
 
   return (
-    <div style={{ height: "600px" }}>
+    <div style={{ height: "85vh",  marginBottom: "300px" }}>
       <Calendar
         localizer={localizer}
         events={events.map((event) => ({
@@ -82,7 +83,7 @@ function PublicCalendar() {
           agenda: true,
         }}
         onSelectEvent={handleEventClick}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%", color: "#678e29" }}
         messages={mensajesEnEspanol}
       />
       <Dialog
