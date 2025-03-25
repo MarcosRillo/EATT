@@ -121,11 +121,11 @@ function AddEventPage() {
         <ArrowBackIcon />
       </Link>
       <Container maxWidth="md" sx={{ mt: 4, paddingBottom: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h5" component="h1" color="primary" gutterBottom>
           Agregar Nuevo Evento
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Información Básica
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -152,7 +152,7 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 3 }} />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Ubicación
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -186,7 +186,7 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 3 }} />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Fecha y Hora
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -237,7 +237,7 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 3 }} />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Identidad
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -274,7 +274,7 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 3 }} />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Asistencia
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -322,7 +322,7 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 3 }} />
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           Información Adicional
         </Typography>
         <Grid container spacing={2} mb={2}>
@@ -365,7 +365,7 @@ function AddEventPage() {
         <Box sx={{ mt: 3 }}>
           <Button
             variant="contained"
-            color="primary"
+            color="secondary"
             onClick={handleAddEventSubmit}
           >
             Agregar Evento
