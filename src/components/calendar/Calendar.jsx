@@ -11,7 +11,7 @@ import moment from "moment";
 import "moment/locale/es";
 moment.locale("es");
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { useEvents } from "@/app/context/EventContext"; // Ajusta la ruta si es necesario
+import { useEvents } from "@/app/context/EventContext"; 
 import {
   Dialog,
   DialogTitle,
@@ -22,12 +22,12 @@ import {
   Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import GoogleMap from "@/components/googleMap/GoogleMap"; // Componente opcional para el mapa
+import GoogleMap from "@/components/googleMap/GoogleMap"; 
 
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import RoomIcon from "@mui/icons-material/Room"; // O el icono de ubicación que prefieras
+import RoomIcon from "@mui/icons-material/Room"; 
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CategoryIcon from "@mui/icons-material/Category";
 import LinkIcon from "@mui/icons-material/Link";
@@ -66,27 +66,23 @@ function PublicCalendar() {
 
   return (
     <div style={{ height: "600px" }}>
-      {" "}
-      {/* Ajusta la altura según necesites */}
       <Calendar
         localizer={localizer}
         events={events.map((event) => ({
-          // Formatea los eventos para react-big-calendar
           start: new Date(event.date + "T" + event.timeStart),
           end: new Date(event.date + "T" + event.timeEnd),
           title: event.title,
-          ...event, // Pasa las otras propiedades del evento
+          ...event,
         }))}
         defaultView={Views.MONTH}
         views={{
           month: true,
           week: true,
           day: true,
-          agenda: true, // La vista de agenda puede servir como vista anual en formato de lista
+          agenda: true,
         }}
         onSelectEvent={handleEventClick}
         style={{ width: "100%", height: "100%" }}
-        messages={mensajesEnEspanol}
       />
       <Dialog
         open={openModal}
@@ -217,8 +213,6 @@ function PublicCalendar() {
                   </Typography>
                 </Box>
               )}
-
-              {/* Aquí podrías agregar lógica para mostrar imágenes, videos y otros enlaces opcionales */}
             </DialogContent>
           </>
         )}
