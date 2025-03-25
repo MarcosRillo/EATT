@@ -1,0 +1,218 @@
+/* Calendar.modules.css */
+
+/* General container */
+.calendarContainer {
+  margin-top: 20px;
+  background-color: #ffffff; /* background.default */
+  color: #07476b; /* primary.main */
+  height: 100%;
+  width: 100%;
+  border-radius: 4px; /* Añadiendo un ligero radio a los bordes del contenedor */
+  overflow: hidden; /* Para que los elementos internos con border-radius no sobresalgan */
+}
+
+/* Toolbar */
+.rbc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Más padding horizontal */
+  border-bottom: 1px solid #f5f5f5; /* background.paper */
+  background-color: #07476b; /* primary.main */
+}
+
+.rbc-toolbar button {
+  background-color: #678e29; /* secondary.main */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px; /* Ligeramente redondeados */
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Ligera sombra */
+}
+
+.rbc-toolbar button:hover {
+  background-color: #557a22; /* Ligeramente más oscuro al hover */
+}
+
+.rbc-toolbar button:active,
+.rbc-toolbar button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(7, 71, 107, 0.5); /* primary.main */
+}
+
+.rbc-toolbar-label {
+  font-size: 1.3em;
+  font-weight: 500; /* Un poco menos bold */
+  color: #ffffff; /* Text color on primary background */
+}
+
+/* Month View */
+.rbc-month-view {
+  border: 1px solid #f5f5f5; /* background.paper */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rbc-month-row {
+  display: flex;
+}
+
+.rbc-date-cell {
+  flex: 1;
+  padding: 8px 10px; /* Ligeramente menos padding para más espacio */
+  border: none;
+  text-align: center; /* Manteniendo la altura mínima */
+  border-right: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex; /* Para alinear el número del día en la parte superior */
+  flex-direction: column;
+  align-items: center; /* Centrando horizontalmente */
+  justify-content: flex-start; /* Alineando el contenido al inicio (arriba) */
+}
+
+.rbc-month-row:last-child .rbc-date-cell {
+  border-bottom: none;
+}
+
+.rbc-month-row .rbc-date-cell:last-child {
+  border-right: none;
+}
+
+.rbc-date-cell.rbc-now {
+  background-color: #e0f2f7; /* Light blue hint for today */
+  font-weight: 500;
+  border: 1px solid #00bcd4; /* Un borde sutil para resaltar el día actual */
+}
+
+.rbc-date-cell.rbc-off-range {
+  color: #ccc; /* Un gris más claro para los días fuera del rango */
+}
+
+.rbc-date-cell > a {
+  color: #777777; /* text.secondary */
+  text-decoration: none;
+  display: block;
+  padding: 6px 5px 0; /* Ajustando el padding para el número del día */
+  width: 100%;
+  text-align: center; /* Asegurando que el número esté centrado */
+  font-size: 1em; /* Tamaño de fuente base para el número del día */
+}
+
+.rbc-header {
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: 600; /* Haciendo la cabecera más bold */
+  background-color: #f5f5f5; /* background.paper */
+  color: #07476b; /* primary.main */
+  font-size: 0.9em; /* Reduciendo ligeramente el tamaño de la fuente de la cabecera */
+}
+
+/* Estilos para los eventos dentro de la celda */
+.rbc-event {
+  background-color: #07476b; /* primary.main */
+  color: #ffffff;
+  border: none;
+  padding: 5px 8px; /* Reduciendo el padding del evento */
+  margin: 2px 5px; /* Reduciendo el margen del evento */
+  border-radius: 4px;
+  font-size: 0.85em; /* Reduciendo ligeramente el tamaño de la fuente del evento */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.rbc-event-label {
+  color: #ffffff;
+}
+
+.rbc-day-bg {
+  background: #ffffff; /* background.default */
+}
+
+
+/* Agenda View */
+.rbc-agenda-view {
+  border: 1px solid #f5f5f5; /* background.paper */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rbc-agenda-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rbc-agenda-date-cell,
+.rbc-agenda-time-cell,
+.rbc-agenda-event-cell {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f5f5f5; /* background.paper */
+  text-align: left;
+}
+
+.rbc-agenda-date-cell {
+  color: #07476b; /* primary.main */
+  font-weight: 500;
+}
+
+.rbc-agenda-time-cell {
+  font-style: normal; /* Quitamos la cursiva */
+  color: #777777; /* text.secondary */
+}
+
+.rbc-agenda-event-cell {
+  color: #07476b; /* primary.main */
+}
+
+.rbc-agenda-event-cell > a {
+  color: #07476b; /* primary.main for links */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.rbc-agenda-time-cell::before {
+  content: "Hora: "; /* Añadiendo un prefijo a la hora */
+  font-weight: bold;
+  color: #343a40; /* Un gris más oscuro */
+}
+
+/* Week and Day Views (basic styling) */
+.rbc-time-view,
+.rbc-day-view {
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rbc-time-header-gutter,
+.rbc-time-gutter {
+  color: #777777; /* text.secondary */
+  padding: 10px;
+}
+
+.rbc-time-slot {
+  border-bottom: 1px dotted #eee;
+}
+
+.rbc-time-content {
+  border-left: 1px solid #f5f5f5;
+}
+
+.rbc-time-slot-group {
+  min-height: 40px; /* Un poco más de espacio entre las horas */
+}
+
+.rbc-event-allday {
+  background-color: #678e29; /* secondary.main para eventos de todo el día */
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 2px 5px;
+  font-size: 0.9em;
+}
