@@ -83,6 +83,7 @@ function PublicCalendar() {
         }}
         onSelectEvent={handleEventClick}
         style={{ width: "100%", height: "100%" }}
+        messages={mensajesEnEspanol}
       />
       <Dialog
         open={openModal}
