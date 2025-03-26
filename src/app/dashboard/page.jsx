@@ -27,7 +27,10 @@ function DashboardPage() {
           Agregar Nuevo Evento
         </Button>
       </Box>
-      <Calendar events={events} /> {/* Los eventos ahora vienen del contexto */}
+      <Calendar events={events} />
+      <Typography variant="h5" component="h5" gutterBottom textAlign="center">
+        Preguntar si aca agrego graficos con metricas
+      </Typography>
     </Container>
   );
 }

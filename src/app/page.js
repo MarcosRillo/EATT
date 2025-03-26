@@ -17,10 +17,20 @@ export default function Home() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Grid container justifyContent="space-between" alignItems="center" marginBottom="30px">
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        marginBottom="30px"
+      >
         <Grid item>
           <Typography variant="h5" component="h5" gutterBottom>
             EATT & TCVB | Agenda de Eventos
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="h5" component="h5" gutterBottom>
+            Agregar carrousel con flyers
           </Typography>
         </Grid>
         <Grid item>
@@ -34,6 +44,9 @@ export default function Home() {
         </Grid>
       </Grid>
       <PublicCalendar />
+      <Typography variant="h5" component="h5" gutterBottom textAlign="center">
+        Preguntar si aca agrego graficos con metricas
+      </Typography>
     </Container>
   );
 }
