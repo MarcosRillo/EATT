@@ -19,6 +19,8 @@ import {
 import Link from "next/link";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useEvents } from "@/app/context/EventContext"; // Importa el hook
+import { useTheme } from "@mui/material/styles"; // Importa el hook para acceder al tema
+
 const eventTypes = [
   "Asociativos",
   "Corporativos",
@@ -30,6 +32,7 @@ const eventTypes = [
 ];
 
 function AddEventPage() {
+  const theme = useTheme(); // Accede al tema
   const { addEvent } = useEvents(); // Accede a la función addEvent desde el contexto
 
   // State para los campos del formulario
@@ -98,40 +101,53 @@ function AddEventPage() {
     setImagenResponsive(event.target.files[0]);
   };
 
-  const backButtonStyle = {
-    position: "absolute",
-    top: "16px",
-    left: "16px",
-    zIndex: 3,
-    backgroundColor: "#2a48a2",
-    color: "white",
-    cursor: "pointer",
-    fontSize: "1.5rem",
-    borderRadius: "8px",
-    padding: "6px",
-    transition: "background-color 0.3s ease",
-    "&:hover": {
-      backgroundColor: "#f3faff",
-    },
-  };
-
   return (
-    <Box sx={{ position: "relative", minHeight: "100vh" }}>
-      <Link href="/dashboard" style={backButtonStyle}>
+    <Box
+      sx={{
+        position: "relative",
+        minHeight: "100vh",
+        backgroundColor: theme.palette.background.default,
+      }}
+    >
+      <Link
+        href="/dashboard"
+        style={{
+          position: "absolute",
+          top: "16px",
+          left: "16px",
+          zIndex: 3,
+          backgroundColor: theme.palette.primary.main, // Usando el color primario del tema
+          color: theme.palette.background.default, // Texto blanco
+          cursor: "pointer",
+          fontSize: "1.2rem", // Reduciendo un poco el tamaño
+          borderRadius: "4px", // Haciendo los bordes más acordes al tema
+          padding: "8px", // Aumentando un poco el padding
+          transition: "background-color 0.3s ease",
+          "&:hover": {
+            backgroundColor: theme.palette.primary.dark, // Un tono más oscuro al pasar el ratón
+          },
+        }}
+      >
         <ArrowBackIcon />
       </Link>
-      <Container maxWidth="md" sx={{ mt: 4, paddingBottom: 4 }}>
-        <Typography variant="h5" component="h1" color="primary" gutterBottom>
+      <Container maxWidth="md" sx={{ mt: 6, paddingBottom: 4 }}>
+        {" "}
+        {/* Aumentando el margen superior */}
+        <Typography variant="h4" component="h1" color="primary" gutterBottom>
+          {" "}
+          {/* Cambiando a h4 para menos énfasis */}
           Agregar Nuevo Evento
         </Typography>
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
+          {" "}
+          {/* Añadiendo margen superior */}
           Información Básica
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
+          {" "}
+          {/* Aumentando el espaciado */}
           <Grid item xs={12}>
             <TextField
-              fullWidth
               label="Nombre del Evento"
               variant="outlined"
               value={nombre}
@@ -140,25 +156,22 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              fullWidth
               label="Descripción"
               variant="outlined"
               multiline
-              rows={3}
+              rows={4}
               value={descripcion}
               onChange={(e) => setDescripcion(e.target.value)}
             />
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 3 }} />
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Ubicación
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Sede"
               variant="outlined"
               value={sede}
@@ -167,7 +180,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Ciudad"
               variant="outlined"
               value={ciudad}
@@ -176,7 +188,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              fullWidth
               label="Maps (URL o Embed)"
               variant="outlined"
               value={mapsUrl}
@@ -184,15 +195,13 @@ function AddEventPage() {
             />
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 3 }} />
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Fecha y Hora
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Fecha Desde"
               type="date"
               variant="outlined"
@@ -203,7 +212,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Fecha Hasta"
               type="date"
               variant="outlined"
@@ -214,7 +222,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Horario Desde"
               type="time"
               variant="outlined"
@@ -225,7 +232,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Horario Hasta"
               type="time"
               variant="outlined"
@@ -235,15 +241,13 @@ function AddEventPage() {
             />
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 3 }} />
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Identidad
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Logo"
               variant="outlined"
               type="file"
@@ -251,14 +255,13 @@ function AddEventPage() {
               InputLabelProps={{ shrink: true }}
             />
             {logo && (
-              <Typography variant="caption">
+              <Typography variant="caption" color="text.secondary">
                 Logo seleccionado: {logo.name}
               </Typography>
             )}
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Imagen"
               variant="outlined"
               type="file"
@@ -266,21 +269,19 @@ function AddEventPage() {
               InputLabelProps={{ shrink: true }}
             />
             {imagen && (
-              <Typography variant="caption">
+              <Typography variant="caption" color="text.secondary">
                 Imagen seleccionada: {imagen.name}
               </Typography>
             )}
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 3 }} />
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Asistencia
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={4}>
             <TextField
-              fullWidth
               label="Asistencia Estimada (Locales)"
               variant="outlined"
               type="number"
@@ -290,7 +291,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
-              fullWidth
               label="Asistencia Estimada (Nacionales)"
               variant="outlined"
               type="number"
@@ -300,7 +300,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
-              fullWidth
               label="Asistencia Estimada (Extranjeros)"
               variant="outlined"
               type="number"
@@ -314,21 +313,20 @@ function AddEventPage() {
                 <Checkbox
                   checked={trasmisionVirtual}
                   onChange={(e) => setTrasmisionVirtual(e.target.checked)}
+                  color="secondary" // Usando el color secundario para el checkbox
                 />
               }
               label="Trasmisión Virtual"
             />
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 3 }} />
-
-        <Typography variant="h6" color="primary" gutterBottom>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Información Adicional
         </Typography>
-        <Grid container spacing={2} mb={2}>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Productor (Dejar vacío si es el mismo que el organizador)"
               variant="outlined"
               value={productor}
@@ -337,7 +335,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
-              fullWidth
               label="Web del Evento"
               variant="outlined"
               type="url"
@@ -347,7 +344,6 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              fullWidth
               label="Imagen Responsive (Medidas recomendadas: [aquí las medidas])"
               variant="outlined"
               type="file"
@@ -355,18 +351,20 @@ function AddEventPage() {
               InputLabelProps={{ shrink: true }}
             />
             {imagenResponsive && (
-              <Typography variant="caption">
+              <Typography variant="caption" color="text.secondary">
                 Imagen responsive seleccionada: {imagenResponsive.name}
               </Typography>
             )}
           </Grid>
         </Grid>
-
-        <Box sx={{ mt: 3 }}>
+        <Box sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}>
+          {" "}
+          {/* Añadiendo margen superior y alineando a la derecha */}
           <Button
             variant="contained"
             color="secondary"
             onClick={handleAddEventSubmit}
+            sx={{ padding: "10px 24px", fontSize: "1rem" }} // Aumentando el padding del botón
           >
             Agregar Evento
           </Button>
