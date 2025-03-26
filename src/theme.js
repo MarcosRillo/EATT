@@ -38,6 +38,9 @@ const theme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {},
+        outlined: {
+          borderColor: "#678e29", 
+        },
       },
       defaultProps: {
         fullWidth: true,
