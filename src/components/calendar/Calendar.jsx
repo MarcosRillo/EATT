@@ -122,154 +122,162 @@ function PublicCalendar() {
                 <CloseIcon />
               </IconButton>
             </DialogTitle>
-            <DialogContent sx={{ minHeight: "400px", padding: 3 }}>
-              <Typography
-                variant="h3"
-                component="h3"
-                gutterBottom
-                color={theme.palette.primary.main}
-              >
-                {selectedEvent.title}
-              </Typography>
-
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <CalendarTodayIcon
-                  sx={{ mr: 1, color: theme.palette.secondary.main }}
-                />
-                <Typography variant="subtitle1">
-                  {moment(selectedEvent.date).format(
-                    "dddd, DD [de] MMMM [de]YYYY" // Corrección del año
-                  )}
+            <DialogContent sx={{ minHeight: "400px", padding: 0 }}>
+              {" "}
+              {/* Cambié el padding a 0 */}
+              <img
+                src="/banners/evento1.png" // Reemplaza con la ruta correcta y quizás una lógica para elegir un banner diferente
+                alt="Banner del Evento"
+                style={{
+                  width: "100%", // Asegura que la imagen ocupe todo el ancho del DialogContent
+                  display: "block", // Evita espacios extra debajo de la imagen
+                }}
+              />
+              <Box sx={{ padding: 3 }}>
+                {" "}
+                {/* Reintroduje un padding para el contenido restante */}
+                <Typography
+                  variant="h3"
+                  component="h3"
+                  gutterBottom
+                  color={theme.palette.primary.main}
+                >
+                  {selectedEvent.title}
                 </Typography>
-              </Box>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <ScheduleIcon
-                  sx={{ mr: 1, color: theme.palette.secondary.main }}
-                />
-                <Typography variant="subtitle1">{`${selectedEvent.timeStart} - ${selectedEvent.timeEnd}`}</Typography>
-              </Box>
-
-              <Typography
-                variant="h6"
-                component="h3"
-                sx={{ mt: 2, mb: 1, color: theme.palette.primary.main }}
-              >
-                Descripción
-              </Typography>
-              <Typography variant="body1" paragraph>
-                {selectedEvent.description}
-              </Typography>
-
-              {(selectedEvent.sede ||
-                selectedEvent.ciudad ||
-                selectedEvent.mapsUrl) && (
-                <>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{ mt: 2, mb: 1, color: theme.palette.primary.main }}
-                  >
-                    Lugar
+                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CalendarTodayIcon
+                    sx={{ mr: 1, color: theme.palette.secondary.main }}
+                  />
+                  <Typography variant="subtitle1">
+                    {moment(selectedEvent.date).format(
+                      "dddd, DD [de] MMMM [de]YYYY" // Corrección del año
+                    )}
                   </Typography>
-                  {selectedEvent.sede && (
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <ScheduleIcon
+                    sx={{ mr: 1, color: theme.palette.secondary.main }}
+                  />
+                  <Typography variant="subtitle1">{`${selectedEvent.timeStart} - ${selectedEvent.timeEnd}`}</Typography>
+                </Box>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{ mt: 2, mb: 1, color: theme.palette.primary.main }}
+                >
+                  Descripción
+                </Typography>
+                <Typography variant="body1" paragraph>
+                  {selectedEvent.description}
+                </Typography>
+                {(selectedEvent.sede ||
+                  selectedEvent.ciudad ||
+                  selectedEvent.mapsUrl) && (
+                  <>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mt: 2, mb: 1, color: theme.palette.primary.main }}
+                    >
+                      Lugar
+                    </Typography>
+                    {selectedEvent.sede && (
+                      <Typography
+                        variant="body2"
+                        sx={{ display: "flex", alignItems: "center", mb: 0.5 }}
+                      >
+                        <LocationOnIcon
+                          sx={{ mr: 1, color: theme.palette.secondary.main }}
+                        />
+                        {selectedEvent.sede}
+                      </Typography>
+                    )}
+                    {selectedEvent.ciudad && (
+                      <Typography
+                        variant="body2"
+                        sx={{ display: "flex", alignItems: "center", mb: 0.5 }}
+                      >
+                        <RoomIcon
+                          sx={{ mr: 1, color: theme.palette.secondary.main }}
+                        />{" "}
+                        {/* Otro icono de ubicación */}
+                        {selectedEvent.ciudad}
+                      </Typography>
+                    )}
+                    {selectedEvent.mapsUrl && (
+                      <Box sx={{ mt: 1 }}>
+                        <GoogleMap url={selectedEvent.mapsUrl} />
+                      </Box>
+                    )}
+                  </>
+                )}
+                {selectedEvent.organizador && (
+                  <Box sx={{ mt: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mb: 1, color: theme.palette.primary.main }}
+                    >
+                      Organización Responsable
+                    </Typography>
                     <Typography
                       variant="body2"
-                      sx={{ display: "flex", alignItems: "center", mb: 0.5 }}
+                      sx={{ display: "flex", alignItems: "center" }}
                     >
-                      <LocationOnIcon
+                      <AccountCircleIcon
                         sx={{ mr: 1, color: theme.palette.secondary.main }}
                       />
-                      {selectedEvent.sede}
+                      {selectedEvent.organizador}
                     </Typography>
-                  )}
-                  {selectedEvent.ciudad && (
+                  </Box>
+                )}
+                {selectedEvent.tipo && (
+                  <Box sx={{ mt: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mb: 1, color: theme.palette.primary.main }}
+                    >
+                      Categoría del Evento
+                    </Typography>
                     <Typography
                       variant="body2"
-                      sx={{ display: "flex", alignItems: "center", mb: 0.5 }}
+                      sx={{ display: "flex", alignItems: "center" }}
                     >
-                      <RoomIcon
+                      <CategoryIcon
                         sx={{ mr: 1, color: theme.palette.secondary.main }}
-                      />{" "}
-                      {/* Otro icono de ubicación */}
-                      {selectedEvent.ciudad}
+                      />
+                      {selectedEvent.tipo}
                     </Typography>
-                  )}
-                  {selectedEvent.mapsUrl && (
-                    <Box sx={{ mt: 1 }}>
-                      <GoogleMap url={selectedEvent.mapsUrl} />
-                    </Box>
-                  )}
-                </>
-              )}
-
-              {selectedEvent.organizador && (
-                <Box sx={{ mt: 2 }}>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{ mb: 1, color: theme.palette.primary.main }}
-                  >
-                    Organización Responsable
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ display: "flex", alignItems: "center" }}
-                  >
-                    <AccountCircleIcon
-                      sx={{ mr: 1, color: theme.palette.secondary.main }}
-                    />
-                    {selectedEvent.organizador}
-                  </Typography>
-                </Box>
-              )}
-
-              {selectedEvent.tipo && (
-                <Box sx={{ mt: 2 }}>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{ mb: 1, color: theme.palette.primary.main }}
-                  >
-                    Categoría del Evento
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ display: "flex", alignItems: "center" }}
-                  >
-                    <CategoryIcon
-                      sx={{ mr: 1, color: theme.palette.secondary.main }}
-                    />
-                    {selectedEvent.tipo}
-                  </Typography>
-                </Box>
-              )}
-
-              {selectedEvent.webEvento && (
-                <Box sx={{ mt: 2 }}>
-                  <Typography
-                    variant="h6"
-                    component="h3"
-                    sx={{ mb: 1, color: theme.palette.primary.main }}
-                  >
-                    Enlaces
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ display: "flex", alignItems: "center" }}
-                  >
-                    <LinkIcon
-                      sx={{ mr: 1, color: theme.palette.secondary.main }}
-                    />
-                    <MuiLink
-                      href={selectedEvent.webEvento}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  </Box>
+                )}
+                {selectedEvent.webEvento && (
+                  <Box sx={{ mt: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mb: 1, color: theme.palette.primary.main }}
                     >
-                      Sitio Web
-                    </MuiLink>
-                  </Typography>
-                </Box>
-              )}
+                      Enlaces
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ display: "flex", alignItems: "center" }}
+                    >
+                      <LinkIcon
+                        sx={{ mr: 1, color: theme.palette.secondary.main }}
+                      />
+                      <MuiLink
+                        href={selectedEvent.webEvento}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Sitio Web
+                      </MuiLink>
+                    </Typography>
+                  </Box>
+                )}
+              </Box>
             </DialogContent>
           </>
         )}
