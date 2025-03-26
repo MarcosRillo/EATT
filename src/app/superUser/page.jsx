@@ -23,6 +23,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles"; // Importa el hook para acceder al tema
 import pendingEventsData from "@/data/pendingEvents";
 import pendingUsersData from "@/data/pendingUsers";
+import Link from "next/link";
 
 const modalStyle = {
   position: "absolute",
@@ -228,6 +229,7 @@ function SuperuserDashboard() {
       </Grid>
 
       {/* Modal de vista previa del evento */}
+      {/* Modal de vista previa del evento */}
       <Modal
         open={isEventPreviewOpen}
         onClose={handleCloseEventPreview}
@@ -271,6 +273,16 @@ function SuperuserDashboard() {
                   <strong>Ciudad:</strong> {selectedEventForPreview.ciudad}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Maps URL:</strong>{" "}
+                  <Link
+                    href={selectedEventForPreview.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {selectedEventForPreview.mapsUrl}
+                  </Link>
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
                   <strong>Fecha Desde:</strong>{" "}
                   {selectedEventForPreview.fechaDesde}
                 </Typography>
@@ -286,7 +298,61 @@ function SuperuserDashboard() {
                   <strong>Hora Hasta:</strong>{" "}
                   {selectedEventForPreview.horaHasta}
                 </Typography>
-                {/* Aquí podrías mostrar más detalles del evento */}
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Tipo:</strong> {selectedEventForPreview.tipo}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Logo:</strong> {selectedEventForPreview.logo}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Imagen:</strong> {selectedEventForPreview.image}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Asistencia Estimada:</strong>
+                  <ul>
+                    <li>
+                      Locales:{" "}
+                      {selectedEventForPreview.estimatedAttendance?.local}
+                    </li>
+                    <li>
+                      Nacionales:{" "}
+                      {selectedEventForPreview.estimatedAttendance?.national}
+                    </li>
+                    <li>
+                      Extranjeros:{" "}
+                      {selectedEventForPreview.estimatedAttendance?.foreign}
+                    </li>
+                  </ul>
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Trasmisión Virtual:</strong>{" "}
+                  {selectedEventForPreview.virtualTransmission ? "Sí" : "No"}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Organizador:</strong>{" "}
+                  {selectedEventForPreview.organizador}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Productor:</strong> {selectedEventForPreview.producer}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Web del Evento:</strong>{" "}
+                  {selectedEventForPreview.website ? (
+                    <Link
+                      href={selectedEventForPreview.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {selectedEventForPreview.website}
+                    </Link>
+                  ) : (
+                    "No especificada"
+                  )}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Imagen Responsive:</strong>{" "}
+                  {selectedEventForPreview.responsiveImage}
+                </Typography>
               </Box>
             </>
           )}
@@ -338,7 +404,49 @@ function SuperuserDashboard() {
                 <Typography variant="body1" sx={{ mb: 1 }}>
                   <strong>Email:</strong> {selectedUserForPreview.email}
                 </Typography>
-                {/* Aquí podrías mostrar más detalles del usuario */}
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>WhatsApp:</strong> {selectedUserForPreview.whatsapp}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Foto de Perfil:</strong>{" "}
+                  {selectedUserForPreview.fotoPerfil}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Nombre de la Organización:</strong>{" "}
+                  {selectedUserForPreview.nombreOrganizacion}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Rubro:</strong> {selectedUserForPreview.rubro}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Tipo de Organización:</strong>{" "}
+                  {selectedUserForPreview.tipoOrganizacion}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>CUIT/CUIL:</strong> {selectedUserForPreview.cuitCuil}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Logo de la Organización:</strong>{" "}
+                  {selectedUserForPreview.logo}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 1 }}>
+                  <strong>Sitio Web:</strong>{" "}
+                  {selectedUserForPreview.sitioWeb ? (
+                    <Link
+                      href={selectedUserForPreview.sitioWeb}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {selectedUserForPreview.sitioWeb}
+                    </Link>
+                  ) : (
+                    "No especificado"
+                  )}
+                </Typography>
+                <Typography variant="body1">
+                  <strong>Motivación:</strong>{" "}
+                  {selectedUserForPreview.motivacion}
+                </Typography>
               </Box>
             </>
           )}
