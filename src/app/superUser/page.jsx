@@ -118,7 +118,7 @@ function SuperuserDashboard() {
       </Typography>
       <Calendar />
 
-      <Grid container spacing={2} sx={{ mt: 4 }}>
+      <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Typography variant="h6" gutterBottom>
             Solicitudes de Eventos Pendientes
@@ -130,16 +130,16 @@ function SuperuserDashboard() {
                   key={event.id}
                   sx={{ borderBottom: "1px solid #f0f0f0", padding: "16px" }}
                 >
-                  <ListItemText
-                    primary={event.nombre}
-                    secondary={`${event.fechaDesde} ${event.horaDesde} - ${event.fechaHasta} ${event.horaHasta}`}
-                  />
                   <IconButton
                     onClick={() => handleOpenEventPreview(event)}
                     aria-label="ver"
                   >
                     <VisibilityIcon />
                   </IconButton>
+                  <ListItemText
+                    primary={event.nombre}
+                    secondary={`${event.fechaDesde} ${event.horaDesde} - ${event.fechaHasta} ${event.horaHasta}`}
+                  />
                   <Button
                     onClick={() => handleAcceptEvent(event.id)}
                     startIcon={<CheckCircleOutlineIcon />}
@@ -177,13 +177,13 @@ function SuperuserDashboard() {
                   key={user.id}
                   sx={{ borderBottom: "1px solid #f0f0f0", padding: "16px" }}
                 >
-                  <ListItemText primary={user.nombre} secondary={user.email} />
                   <IconButton
                     onClick={() => handleOpenUserPreview(user)}
                     aria-label="ver"
                   >
                     <VisibilityIcon />
                   </IconButton>
+                  <ListItemText primary={user.nombre} secondary={user.email} />
                   <Button
                     onClick={() => handleAcceptUser(user.id)}
                     startIcon={<CheckCircleOutlineIcon />}
