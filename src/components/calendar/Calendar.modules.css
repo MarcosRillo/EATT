@@ -1,218 +1,245 @@
 /* Calendar.modules.css */
 
-/* General container */
+/* Estilos para el contenedor general del calendario */
 .calendarContainer {
-  margin-top: 20px;
-  background-color: #ffffff; /* background.default */
-  color: #07476b; /* primary.main */
-  height: 100%;
-  width: 100%;
-  border-radius: 4px; /* Añadiendo un ligero radio a los bordes del contenedor */
-  overflow: hidden; /* Para que los elementos internos con border-radius no sobresalgan */
+  margin-top: 20px; /* Añade un margen superior al contenedor */
+  background-color: #ffffff; /* background.default - Establece el color de fondo del contenedor */
+  color: #07476b; /* primary.main - Establece el color de texto primario del contenedor */
+  height: 100%; /* Hace que el contenedor ocupe el 100% de la altura de su padre */
+  width: 100%; /* Hace que el contenedor ocupe el 100% del ancho de su padre */
+  border-radius: 4px; /* Añade un ligero radio a los bordes del contenedor */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde de los bordes redondeados */
 }
 
-/* Toolbar */
+/* Estilos para la barra de herramientas (navegación) */
 .rbc-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px; /* Más padding horizontal */
-  border-bottom: 1px solid #f5f5f5; /* background.paper */
-  background-color: #07476b; /* primary.main */
+  display: flex; /* Utiliza flexbox para alinear los elementos de la barra de herramientas */
+  justify-content: space-between; /* Espacia los elementos de la barra de herramientas (botones y título) */
+  align-items: center; /* Centra verticalmente los elementos de la barra de herramientas */
+  padding: 15px 20px; /* Añade relleno vertical y horizontal a la barra de herramientas */
+  border-bottom: 1px solid #f5f5f5; /* background.paper - Añade un borde inferior a la barra de herramientas */
+  background-color: #07476b; /* primary.main - Establece el color de fondo de la barra de herramientas */
 }
 
+/* Estilos para los botones de la barra de herramientas */
 .rbc-toolbar button {
-  background-color: #678e29; /* secondary.main */
-  color: #ffffff;
-  border: none;
-  border-radius: 4px; /* Ligeramente redondeados */
-  padding: 8px 16px;
-  margin: 0 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Ligera sombra */
+  background-color: #678e29; /* secondary.main - Establece el color de fondo de los botones */
+  color: #ffffff; /* Establece el color del texto de los botones */
+  border: none; /* Elimina el borde de los botones */
+  border-radius: 4px; /* Añade un ligero radio a los bordes de los botones */
+  padding: 8px 16px; /* Añade relleno vertical y horizontal a los botones */
+  margin: 0 5px; /* Añade margen horizontal entre los botones */
+  cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+  font-size: 0.9em; /* Establece el tamaño de la fuente de los botones */
+  transition: background-color 0.3s ease; /* Añade una transición suave al cambiar el color de fondo */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Añade una ligera sombra a los botones */
 }
 
+/* Estilos para el estado hover de los botones de la barra de herramientas */
 .rbc-toolbar button:hover {
-  background-color: #557a22; /* Ligeramente más oscuro al hover */
+  background-color: #557a22; /* Ligeramente más oscuro al hover - Cambia el color de fondo al pasar el ratón */
 }
 
+/* Estilos para los estados activo y focus de los botones de la barra de herramientas */
 .rbc-toolbar button:active,
 .rbc-toolbar button:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(7, 71, 107, 0.5); /* primary.main */
+  outline: none; /* Elimina el contorno predeterminado al enfocar */
+  box-shadow: 0 0 5px rgba(7, 71, 107, 0.5); /* primary.main - Añade una sombra al enfocar o activar */
+  background-color: #ffffff; /* Cambia el color de fondo al activar o enfocar */
+  color: #07476b; /* Cambia el color del texto al activar o enfocar */
 }
 
+/* Estilos para la etiqueta del mes/semana/día en la barra de herramientas */
 .rbc-toolbar-label {
-  font-size: 1.3em;
-  font-weight: 500; /* Un poco menos bold */
-  color: #ffffff; /* Text color on primary background */
+  font-size: 1.3em; /* Establece el tamaño de la fuente de la etiqueta */
+  font-weight: 500; /* Establece el peso de la fuente de la etiqueta */
+  color: #ffffff; /* Establece el color del texto de la etiqueta */
 }
 
-/* Month View */
+/* Estilos para la vista de mes */
 .rbc-month-view {
-  border: 1px solid #f5f5f5; /* background.paper */
-  border-radius: 4px;
-  overflow: hidden;
+  border: 1px solid #f5f5f5; /* background.paper - Añade un borde a la vista de mes */
+  border-radius: 4px; /* Añade un radio a los bordes de la vista de mes */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde de los bordes redondeados */
 }
 
+/* Estilos para cada fila de la vista de mes */
 .rbc-month-row {
-  display: flex;
+  display: flex; /* Utiliza flexbox para alinear las celdas de los días en una fila */
 }
 
+/* Estilos para cada celda de día en la vista de mes */
 .rbc-date-cell {
-  flex: 1;
-  padding: 8px 10px; /* Ligeramente menos padding para más espacio */
-  border: none;
-  text-align: center; /* Manteniendo la altura mínima */
-  border-right: 1px solid #f5f5f5;
-  border-bottom: 1px solid #f5f5f5;
-  display: flex; /* Para alinear el número del día en la parte superior */
-  flex-direction: column;
-  align-items: center; /* Centrando horizontalmente */
-  justify-content: flex-start; /* Alineando el contenido al inicio (arriba) */
+  flex: 1; /* Hace que cada celda ocupe el mismo espacio disponible en la fila */
+  padding: 8px 10px; /* Añade relleno a las celdas de los días */
+  border: none; /* Elimina el borde predeterminado de las celdas */
+  text-align: center; /* Centra el texto dentro de la celda */
+  border-right: 1px solid #f5f5f5; /* Añade un borde derecho a cada celda */
+  border-bottom: 1px solid #f5f5f5; /* Añade un borde inferior a cada celda */
+  display: flex; /* Utiliza flexbox para alinear el número del día y los eventos */
+  flex-direction: column; /* Organiza los elementos internos en columna */
+  align-items: center; /* Centra horizontalmente los elementos internos */
+  justify-content: flex-start; /* Alinea los elementos internos al inicio (arriba) */
 }
 
+/* Elimina el borde inferior de la última fila de celdas */
 .rbc-month-row:last-child .rbc-date-cell {
   border-bottom: none;
 }
 
+/* Elimina el borde derecho de la última celda de cada fila */
 .rbc-month-row .rbc-date-cell:last-child {
   border-right: none;
 }
 
+/* Estilos para la celda que representa el día actual */
 .rbc-date-cell.rbc-now {
-  background-color: #e0f2f7; /* Light blue hint for today */
-  font-weight: 500;
+  background-color: #e0f2f7; /* Light blue hint for today - Resalta el fondo del día actual */
+  font-weight: 500; /* Hace que el número del día actual sea más bold */
   border: 1px solid #00bcd4; /* Un borde sutil para resaltar el día actual */
 }
 
+/* Estilos para las celdas que están fuera del rango del mes actual */
 .rbc-date-cell.rbc-off-range {
   color: #ccc; /* Un gris más claro para los días fuera del rango */
 }
 
+/* Estilos para el enlace dentro de la celda del día (contiene el número del día) */
 .rbc-date-cell > a {
-  color: #777777; /* text.secondary */
-  text-decoration: none;
-  display: block;
-  padding: 6px 5px 0; /* Ajustando el padding para el número del día */
-  width: 100%;
-  text-align: center; /* Asegurando que el número esté centrado */
+  color: #777777; /* text.secondary - Establece el color del número del día */
+  text-decoration: none; /* Elimina la decoración de texto del enlace */
+  display: block; /* Hace que el enlace ocupe todo el espacio de la celda */
+  padding: 6px 5px 0; /* Ajusta el relleno superior y horizontal del número del día */
+  width: 100%; /* Asegura que el enlace ocupe todo el ancho de la celda */
+  text-align: center; /* Centra el número del día */
   font-size: 1em; /* Tamaño de fuente base para el número del día */
 }
 
+/* Estilos para la cabecera de los días de la semana */
 .rbc-header {
-  padding: 10px 15px;
-  text-align: center;
-  border-bottom: 1px solid #f5f5f5;
-  font-weight: 600; /* Haciendo la cabecera más bold */
-  background-color: #f5f5f5; /* background.paper */
-  color: #07476b; /* primary.main */
-  font-size: 0.9em; /* Reduciendo ligeramente el tamaño de la fuente de la cabecera */
+  padding: 10px 15px; /* Añade relleno a la cabecera de los días */
+  text-align: center; /* Centra el texto de la cabecera */
+  border-bottom: 1px solid #f5f5f5; /* background.paper - Añade un borde inferior a la cabecera */
+  font-weight: 600; /* Hace que el texto de la cabecera sea más bold */
+  background-color: #f5f5f5; /* background.paper - Establece el color de fondo de la cabecera */
+  color: #07476b; /* primary.main - Establece el color del texto de la cabecera */
+  font-size: 0.9em; /* Reduce ligeramente el tamaño de la fuente de la cabecera */
 }
 
 /* Estilos para los eventos dentro de la celda */
 .rbc-event {
-  background-color: #07476b; /* primary.main */
-  color: #ffffff;
-  border: none;
-  padding: 5px 8px; /* Reduciendo el padding del evento */
-  margin: 2px 5px; /* Reduciendo el margen del evento */
-  border-radius: 4px;
-  font-size: 0.85em; /* Reduciendo ligeramente el tamaño de la fuente del evento */
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  background-color: #07476b; /* primary.main - Establece el color de fondo de los eventos */
+  color: #ffffff; /* Establece el color del texto de los eventos */
+  border: none; /* Elimina el borde de los eventos */
+  padding: 5px 8px; /* Reduce el relleno de los eventos */
+  margin: 2px 5px; /* Reduce el margen de los eventos */
+  border-radius: 4px; /* Añade un ligero radio a los bordes de los eventos */
+  font-size: 0.85em; /* Reduce ligeramente el tamaño de la fuente de los eventos */
+  overflow: hidden; /* Oculta el contenido del evento que se desborda */
+  white-space: nowrap; /* Evita que el texto del evento se envuelva */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto del evento es demasiado largo */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); /* Añade una ligera sombra a los eventos */
 }
 
+/* Estilos para la etiqueta del evento (por ejemplo, "Evento") */
 .rbc-event-label {
-  color: #ffffff;
+  color: #ffffff; /* Establece el color del texto de la etiqueta del evento */
 }
 
+/* Estilos para el fondo de los días (en la vista de mes) */
 .rbc-day-bg {
-  background: #ffffff; /* background.default */
+  background: #ffffff; /* background.default - Establece el color de fondo de las columnas de los días */
 }
 
-
-/* Agenda View */
+/* Estilos para la vista de agenda */
 .rbc-agenda-view {
-  border: 1px solid #f5f5f5; /* background.paper */
-  border-radius: 4px;
-  overflow: hidden;
+  border: 1px solid #f5f5f5; /* background.paper - Añade un borde a la vista de agenda */
+  border-radius: 4px; /* Añade un radio a los bordes de la vista de agenda */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
+/* Estilos para la tabla de la vista de agenda */
 .rbc-agenda-table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
+  border-collapse: collapse; /* Colapsa los bordes de la tabla */
 }
 
+/* Estilos para las celdas de fecha, hora y evento en la vista de agenda */
 .rbc-agenda-date-cell,
 .rbc-agenda-time-cell,
 .rbc-agenda-event-cell {
-  padding: 10px 15px;
-  border-bottom: 1px solid #f5f5f5; /* background.paper */
-  text-align: left;
+  padding: 10px 15px; /* Añade relleno a las celdas de la agenda */
+  border-bottom: 1px solid #f5f5f5; /* background.paper - Añade un borde inferior a las celdas */
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
+/* Estilos para la celda de la fecha en la vista de agenda */
 .rbc-agenda-date-cell {
-  color: #07476b; /* primary.main */
-  font-weight: 500;
+  color: #07476b; /* primary.main - Establece el color de la fecha */
+  font-weight: 500; /* Hace que la fecha sea más bold */
 }
 
+/* Estilos para la celda de la hora en la vista de agenda */
 .rbc-agenda-time-cell {
-  font-style: normal; /* Quitamos la cursiva */
-  color: #777777; /* text.secondary */
+  font-style: normal; /* Elimina la cursiva predeterminada */
+  color: #777777; /* text.secondary - Establece el color de la hora */
 }
 
+/* Estilos para la celda del título del evento en la vista de agenda */
 .rbc-agenda-event-cell {
-  color: #07476b; /* primary.main */
+  color: #07476b; /* primary.main - Establece el color del título del evento */
 }
 
+/* Estilos para el enlace dentro de la celda del evento en la vista de agenda */
 .rbc-agenda-event-cell > a {
-  color: #07476b; /* primary.main for links */
-  text-decoration: none;
-  font-weight: 500;
+  color: #07476b; /* primary.main for links - Establece el color del enlace del evento */
+  text-decoration: none; /* Elimina la decoración del enlace */
+  font-weight: 500; /* Hace que el título del evento sea más bold */
 }
 
+/* Estilos para el texto "Hora:" antes de la hora en la vista de agenda */
 .rbc-agenda-time-cell::before {
-  content: "Hora: "; /* Añadiendo un prefijo a la hora */
-  font-weight: bold;
-  color: #343a40; /* Un gris más oscuro */
+  content: "Hora: "; /* Añade el texto "Hora: " antes de la hora */
+  font-weight: bold; /* Hace que "Hora:" sea bold */
+  color: #343a40; /* Un gris más oscuro para "Hora:" */
 }
 
-/* Week and Day Views (basic styling) */
+/* Estilos básicos para las vistas de semana y día */
 .rbc-time-view,
 .rbc-day-view {
-  border: 1px solid #f5f5f5;
-  border-radius: 4px;
-  overflow: hidden;
+  border: 1px solid #f5f5f5; /* Añade un borde a las vistas de semana y día */
+  border-radius: 4px; /* Añade un radio a los bordes */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
+/* Estilos para la columna de las horas en las vistas de semana y día */
 .rbc-time-header-gutter,
 .rbc-time-gutter {
-  color: #777777; /* text.secondary */
-  padding: 10px;
+  color: #777777; /* text.secondary - Establece el color del texto de las horas */
+  padding: 10px; /* Añade relleno a la columna de las horas */
 }
 
+/* Estilos para las ranuras de tiempo en las vistas de semana y día */
 .rbc-time-slot {
-  border-bottom: 1px dotted #eee;
+  border-bottom: 1px dotted #eee; /* Añade una línea punteada entre las ranuras de tiempo */
 }
 
+/* Estilos para el contenido de la vista de tiempo (eventos) */
 .rbc-time-content {
-  border-left: 1px solid #f5f5f5;
+  border-left: 1px solid #f5f5f5; /* Añade un borde izquierdo al área de los eventos */
 }
 
+/* Estilos para el grupo de ranuras de tiempo */
 .rbc-time-slot-group {
   min-height: 40px; /* Un poco más de espacio entre las horas */
 }
 
+/* Estilos para los eventos de todo el día */
 .rbc-event-allday {
-  background-color: #678e29; /* secondary.main para eventos de todo el día */
-  color: #ffffff;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin: 2px 5px;
-  font-size: 0.9em;
+  background-color: #678e29; /* secondary.main para eventos de todo el día - Establece el color de fondo */
+  color: #ffffff; /* Establece el color del texto */
+  border-radius: 4px; /* Añade un radio a los bordes */
+  padding: 4px 8px; /* Añade relleno */
+  margin: 2px 5px; /* Añade margen */
+  font-size: 0.9em; /* Establece el tamaño de la fuente */
 }

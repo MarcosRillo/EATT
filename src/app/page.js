@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Grid container justifyContent="space-between" alignItems="center">
+      <Grid container justifyContent="space-between" alignItems="center" marginBottom="30px">
         <Grid item>
           <Typography variant="h5" component="h5" gutterBottom>
             EATT & TCVB | Agenda de Eventos
