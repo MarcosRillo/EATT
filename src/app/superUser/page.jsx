@@ -23,6 +23,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles"; // Importa el hook para acceder al tema
 import pendingEventsData from "@/data/pendingEvents";
 import pendingUsersData from "@/data/pendingUsers";
+import MetricsDashboard from "@/components/metrics/MetricsDashboard";
 import Link from "next/link";
 
 const modalStyle = {
@@ -228,7 +229,6 @@ function SuperuserDashboard() {
         </Grid>
       </Grid>
 
-      {/* Modal de vista previa del evento */}
       {/* Modal de vista previa del evento */}
       <Modal
         open={isEventPreviewOpen}
@@ -452,6 +452,9 @@ function SuperuserDashboard() {
           )}
         </Box>
       </Modal>
+      <Box sx={{ mt: 4 }}>
+        <MetricsDashboard />
+      </Box>
     </Container>
   );
 }
