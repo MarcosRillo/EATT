@@ -6,6 +6,7 @@ import Button from "@mui/material/Button"; // Importa el componente Button
 import Grid from "@mui/material/Grid"; // Importa el componente Grid
 import { useRouter } from "next/navigation"; // Importa el hook useRouter desde 'next/navigation'
 import { useEvents } from "@/app/context/EventContext";
+import ImageCarousel from "@/components/carrousel/carrousel";
 
 export default function Home() {
   const { events } = useEvents();
@@ -29,11 +30,6 @@ export default function Home() {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="h5" component="h5" gutterBottom>
-            Agregar carrousel con flyers
-          </Typography>
-        </Grid>
-        <Grid item>
           <Button
             variant="outlined"
             color="primary"
@@ -43,6 +39,7 @@ export default function Home() {
           </Button>
         </Grid>
       </Grid>
+      <ImageCarousel />
       <PublicCalendar />
       <Typography variant="h5" component="h5" gutterBottom textAlign="center">
         Preguntar si aca agrego graficos con metricas
