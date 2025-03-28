@@ -31,6 +31,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CategoryIcon from "@mui/icons-material/Category";
 import LinkIcon from "@mui/icons-material/Link";
+import PublicIcon from "@mui/icons-material/Public";
 import styles from "@/components/calendar/Calendar.modules.css";
 import theme from "@/theme";
 
@@ -170,6 +171,64 @@ function PublicCalendar() {
                 <Typography variant="body1" paragraph>
                   {selectedEvent.description}
                 </Typography>
+                {selectedEvent.estimatedAttendance && (
+                  <>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mt: 2, mb: 1, color: theme.palette.primary.main }}
+                    >
+                      Asistencia Estimada
+                    </Typography>
+
+                    {/* Total */}
+                    <Typography
+                      variant="body2"
+                      color="primary"
+                      sx={{ mb: 1.5, fontWeight: "bold" }}
+                    >
+                      Total:{" "}
+                      {Object.values(selectedEvent.estimatedAttendance).reduce(
+                        (a, b) => a + b,
+                        0
+                      )}{" "}
+                      personas
+                    </Typography>
+
+                    {/* Desglose */}
+                    <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <LocationOnIcon
+                          sx={{ mr: 1, color: theme.palette.success.main }}
+                        />
+                        <Typography variant="body2">
+                          Locales: {selectedEvent.estimatedAttendance.local}
+                        </Typography>
+                      </Box>
+
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <RoomIcon
+                          sx={{ mr: 1, color: theme.palette.info.main }}
+                        />
+                        <Typography variant="body2">
+                          Nacionales:{" "}
+                          {selectedEvent.estimatedAttendance.national}
+                        </Typography>
+                      </Box>
+
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <PublicIcon
+                          sx={{ mr: 1, color: theme.palette.warning.main }}
+                        />{" "}
+                        {/* Necesitarás importar PublicIcon */}
+                        <Typography variant="body2">
+                          Internacionales:{" "}
+                          {selectedEvent.estimatedAttendance.foreign}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </>
+                )}
                 {(selectedEvent.sede ||
                   selectedEvent.ciudad ||
                   selectedEvent.mapsUrl) && (
