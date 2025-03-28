@@ -41,9 +41,6 @@ export default function Home() {
       </Grid>
       <ImageCarousel />
       <PublicCalendar />
-      <Typography variant="h5" component="h5" gutterBottom textAlign="center">
-        Preguntar si aca agrego graficos con metricas
-      </Typography>
     </Container>
   );
 }

@@ -7,7 +7,8 @@ import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
 import Calendar from "@/components/calendar/Calendar";
 import Link from "next/link";
-import { useEvents } from "@/app/context/EventContext"; // Asegúrate de que la ruta sea correcta
+import { useEvents } from "@/app/context/EventContext";
+import MetricsDashboard from "@/components/metrics/MetricsDashboard";
 
 function DashboardPage() {
   const { events } = useEvents();
@@ -28,9 +29,9 @@ function DashboardPage() {
         </Button>
       </Box>
       <Calendar events={events} />
-      <Typography variant="h5" component="h5" gutterBottom textAlign="center">
-        Preguntar si aca agrego graficos con metricas
-      </Typography>
+      <Box>
+        <MetricsDashboard />
+      </Box>
     </Container>
   );
 }
