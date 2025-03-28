@@ -95,11 +95,10 @@ function PublicCalendar() {
         fullWidth
         sx={{
           "& .MuiPaper-root": {
-            // Target the underlying Paper component
-            backgroundColor: theme.palette.background.paper, // Color de fondo del tema
-            color: theme.palette.text.primary, // Color de texto primario del tema
-            borderRadius: "4px", // Opcional: Añadir un radio a los bordes del diálogo
-            boxShadow: theme.shadows[3], // Opcional: Añadir una sombra
+            backgroundColor: theme.palette.background.paper, 
+            color: theme.palette.text.primary, 
+            borderRadius: "4px",
+            boxShadow: theme.shadows[3],
           },
         }}
       >
@@ -110,8 +109,8 @@ function PublicCalendar() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                backgroundColor: theme.palette.primary.main, // Color primario para el título
-                color: theme.palette.background.default, // Texto blanco para el título
+                backgroundColor: theme.palette.primary.main,
+                color: theme.palette.background.default,
                 padding: "16px 24px",
               }}
             >
@@ -124,19 +123,15 @@ function PublicCalendar() {
               </IconButton>
             </DialogTitle>
             <DialogContent sx={{ minHeight: "400px", padding: 0 }}>
-              {" "}
-              {/* Cambié el padding a 0 */}
               <img
                 src="/banners/evento1.png" // Reemplaza con la ruta correcta y quizás una lógica para elegir un banner diferente
                 alt="Banner del Evento"
                 style={{
-                  width: "100%", // Asegura que la imagen ocupe todo el ancho del DialogContent
-                  display: "block", // Evita espacios extra debajo de la imagen
+                  width: "100%",
+                  display: "block",
                 }}
               />
               <Box sx={{ padding: 3 }}>
-                {" "}
-                {/* Reintroduje un padding para el contenido restante */}
                 <Typography
                   variant="h3"
                   component="h3"
@@ -151,7 +146,7 @@ function PublicCalendar() {
                   />
                   <Typography variant="subtitle1">
                     {moment(selectedEvent.date).format(
-                      "dddd, DD [de] MMMM [de]YYYY" // Corrección del año
+                      "dddd, DD [de] MMMM [de]YYYY"
                     )}
                   </Typography>
                 </Box>
@@ -180,8 +175,6 @@ function PublicCalendar() {
                     >
                       Asistencia Estimada
                     </Typography>
-
-                    {/* Total */}
                     <Typography
                       variant="body2"
                       color="primary"
@@ -194,8 +187,6 @@ function PublicCalendar() {
                       )}{" "}
                       personas
                     </Typography>
-
-                    {/* Desglose */}
                     <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
                       <Box sx={{ display: "flex", alignItems: "center" }}>
                         <LocationOnIcon
@@ -219,8 +210,7 @@ function PublicCalendar() {
                       <Box sx={{ display: "flex", alignItems: "center" }}>
                         <PublicIcon
                           sx={{ mr: 1, color: theme.palette.warning.main }}
-                        />{" "}
-                        {/* Necesitarás importar PublicIcon */}
+                        />
                         <Typography variant="body2">
                           Internacionales:{" "}
                           {selectedEvent.estimatedAttendance.foreign}
