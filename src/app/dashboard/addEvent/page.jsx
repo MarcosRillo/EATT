@@ -319,12 +319,12 @@ function AddEventPage() {
         </Grid>
         <Divider sx={{ mb: 4 }} />
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
-          Asistencia
+          Asistencia Estimada
         </Typography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={4}>
             <TextField
-              label="Asistencia Estimada (Locales)"
+              label="Asistencia Locales"
               variant="outlined"
               type="number"
               value={asistenciaLocales}
@@ -333,7 +333,7 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
-              label="Asistencia Estimada (Nacionales)"
+              label="Asistencia Nacionales"
               variant="outlined"
               type="number"
               value={asistenciaNacionales}
@@ -342,7 +342,7 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12} sm={4}>
             <TextField
-              label="Asistencia Estimada (Extranjeros)"
+              label="Asistencia Extranjeros"
               variant="outlined"
               type="number"
               value={asistenciaExtranjeros}
@@ -355,7 +355,7 @@ function AddEventPage() {
                 <Checkbox
                   checked={trasmisionVirtual}
                   onChange={(e) => setTrasmisionVirtual(e.target.checked)}
-                  color="secondary" // Usando el color secundario para el checkbox
+                  color="secondary"
                 />
               }
               label="Trasmisión Virtual"
@@ -396,20 +396,12 @@ function AddEventPage() {
               onChange={(e) => setWebEvento(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Imagen Responsive (Medidas recomendadas: [aquí las medidas])"
-              variant="outlined"
-              type="file"
-              onChange={handleImagenResponsiveChange}
-              InputLabelProps={{ shrink: true }}
-            />
-            {imagenResponsive && (
-              <Typography variant="caption" color="text.secondary">
-                Imagen responsive seleccionada: {imagenResponsive.name}
-              </Typography>
-            )}
-          </Grid>
+        </Grid>
+        <Divider sx={{ mb: 4 }} />
+        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
+          Imágenes
+        </Typography>
+        <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
             <TextField
               label="Logo"
@@ -424,14 +416,41 @@ function AddEventPage() {
               </Typography>
             )}
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Imagen"
+              variant="outlined"
+              type="file"
+              onChange={handleImagenChange}
+              InputLabelProps={{ shrink: true }}
+            />
+            {imagen && (
+              <Typography variant="caption" color="text.secondary">
+                Imagen seleccionada: {imagen.name}
+              </Typography>
+            )}
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Imagen Responsive (Medidas recomendadas: [aquí las medidas])"
+              variant="outlined"
+              type="file"
+              onChange={handleImagenResponsiveChange}
+              InputLabelProps={{ shrink: true }}
+            />
+            {imagenResponsive && (
+              <Typography variant="caption" color="text.secondary">
+                Imagen responsive seleccionada: {imagenResponsive.name}
+              </Typography>
+            )}
+          </Grid>
         </Grid>
         <Box sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}>
-          {/* Añadiendo margen superior y alineando a la derecha */}
           <Button
             variant="contained"
             color="secondary"
             onClick={handleAddEventSubmit}
-            sx={{ padding: "10px 24px", fontSize: "1rem" }} // Aumentando el padding del botón
+            sx={{ padding: "10px 24px", fontSize: "1rem" }}
           >
             Agregar Evento
           </Button>
