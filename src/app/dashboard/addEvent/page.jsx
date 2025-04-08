@@ -41,10 +41,6 @@ function AddEventPage() {
   const [sede, setSede] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [mapsUrl, setMapsUrl] = useState("");
-  const [fechaDesde, setFechaDesde] = useState("");
-  const [fechaHasta, setFechaHasta] = useState("");
-  const [horaDesde, setHoraDesde] = useState("");
-  const [horaHasta, setHoraHasta] = useState("");
   const [tipo, setTipo] = useState("");
   const [logo, setLogo] = useState(null);
   const [imagen, setImagen] = useState(null);
@@ -52,12 +48,16 @@ function AddEventPage() {
   const [asistenciaNacionales, setAsistenciaNacionales] = useState("");
   const [asistenciaExtranjeros, setAsistenciaExtranjeros] = useState("");
   const [trasmisionVirtual, setTrasmisionVirtual] = useState(false);
+  const [linkTransmisionVirtual, setLinkTransmisionVirtual] = useState("");
   const [organizador, setOrganizador] = useState(
     "Nombre de la Empresa (por defecto)"
   );
   const [productor, setProductor] = useState("");
   const [webEvento, setWebEvento] = useState("");
   const [imagenResponsive, setImagenResponsive] = useState(null);
+  const [dateTimes, setDateTimes] = useState([
+    { fechaDesde: "", fechaHasta: "", horaDesde: "", horaHasta: "" },
+  ]);
 
   const handleAddEventSubmit = () => {
     const newEvent = {
@@ -66,9 +66,13 @@ function AddEventPage() {
       sede,
       ciudad,
       mapsUrl,
-      date: fechaDesde, // Usando fechaDesde como una fecha simple por ahora
-      timeStart: horaDesde,
-      timeEnd: horaHasta,
+      dateTimes: dateTimes.map((dt) => ({
+        // Mapea el array de fechas y horas
+        fechaDesde: dt.fechaDesde,
+        fechaHasta: dt.fechaHasta,
+        horaDesde: dt.horaDesde,
+        horaHasta: dt.horaHasta,
+      })),
       type: tipo,
       logo: logo ? logo.name : null,
       image: imagen ? imagen.name : null,
@@ -78,15 +82,13 @@ function AddEventPage() {
         foreign: asistenciaExtranjeros,
       },
       virtualTransmission: trasmisionVirtual,
+      transmissionLink: trasmisionVirtual ? linkTransmisionVirtual : null,
       organizador,
       producer: productor || organizador,
       website: webEvento,
       responsiveImage: imagenResponsive ? imagenResponsive.name : null,
-      // Podrías querer incluir fechaHasta en tu objeto de evento también
     };
-    addEvent(newEvent); // Usa la función addEvent del contexto
-    console.log("Evento agregado:", newEvent);
-    // Opcionalmente, podrías redirigir de vuelta al dashboard después de agregar el evento
+    addEvent(newEvent);
   };
 
   const handleLogoChange = (event) => {
@@ -99,6 +101,27 @@ function AddEventPage() {
 
   const handleImagenResponsiveChange = (event) => {
     setImagenResponsive(event.target.files[0]);
+  };
+
+  const handleAddDateTime = () => {
+    setDateTimes([
+      ...dateTimes,
+      { fechaDesde: "", fechaHasta: "", horaDesde: "", horaHasta: "" },
+    ]);
+  };
+
+  const handleRemoveDateTime = (index) => {
+    if (dateTimes.length > 1) {
+      const newDateTimes = [...dateTimes];
+      newDateTimes.splice(index, 1);
+      setDateTimes(newDateTimes);
+    }
+  };
+
+  const handleDateTimeChange = (index, name, value) => {
+    const newDateTimes = [...dateTimes];
+    newDateTimes[index][name] = value;
+    setDateTimes(newDateTimes);
   };
 
   return (
@@ -199,47 +222,76 @@ function AddEventPage() {
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
           Fecha y Hora
         </Typography>
-        <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Fecha Desde"
-              type="date"
-              variant="outlined"
-              InputLabelProps={{ shrink: true }}
-              value={fechaDesde}
-              onChange={(e) => setFechaDesde(e.target.value)}
-            />
+        {dateTimes.map((dateTime, index) => (
+          <Grid container spacing={3} mb={2} key={index}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label={`Fecha Desde ${dateTimes.length > 1 ? index + 1 : ""}`}
+                type="date"
+                variant="outlined"
+                InputLabelProps={{ shrink: true }}
+                value={dateTime.fechaDesde}
+                onChange={(e) =>
+                  handleDateTimeChange(index, "fechaDesde", e.target.value)
+                }
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label={`Fecha Hasta ${dateTimes.length > 1 ? index + 1 : ""}`}
+                type="date"
+                variant="outlined"
+                InputLabelProps={{ shrink: true }}
+                value={dateTime.fechaHasta}
+                onChange={(e) =>
+                  handleDateTimeChange(index, "fechaHasta", e.target.value)
+                }
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label={`Horario Desde ${dateTimes.length > 1 ? index + 1 : ""}`}
+                type="time"
+                variant="outlined"
+                InputLabelProps={{ shrink: true }}
+                value={dateTime.horaDesde}
+                onChange={(e) =>
+                  handleDateTimeChange(index, "horaDesde", e.target.value)
+                }
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label={`Horario Hasta ${dateTimes.length > 1 ? index + 1 : ""}`}
+                type="time"
+                variant="outlined"
+                InputLabelProps={{ shrink: true }}
+                value={dateTime.horaHasta}
+                onChange={(e) =>
+                  handleDateTimeChange(index, "horaHasta", e.target.value)
+                }
+                fullWidth
+              />
+            </Grid>
+            {dateTimes.length > 1 && (
+              <Grid item xs={12}>
+                <Button
+                  onClick={() => handleRemoveDateTime(index)}
+                  color="secondary"
+                >
+                  - Eliminar
+                </Button>
+              </Grid>
+            )}
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Fecha Hasta"
-              type="date"
-              variant="outlined"
-              InputLabelProps={{ shrink: true }}
-              value={fechaHasta}
-              onChange={(e) => setFechaHasta(e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Horario Desde"
-              type="time"
-              variant="outlined"
-              InputLabelProps={{ shrink: true }}
-              value={horaDesde}
-              onChange={(e) => setHoraDesde(e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Horario Hasta"
-              type="time"
-              variant="outlined"
-              InputLabelProps={{ shrink: true }}
-              value={horaHasta}
-              onChange={(e) => setHoraHasta(e.target.value)}
-            />
-          </Grid>
+        ))}
+        <Grid item xs={12}>
+          <Button onClick={handleAddDateTime} color="primary">
+            + Agregar otro día y hora
+          </Button>
         </Grid>
         <Divider sx={{ mb: 4 }} />
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
@@ -247,32 +299,22 @@ function AddEventPage() {
         </Typography>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} sm={6}>
-            <TextField
-              label="Logo"
-              variant="outlined"
-              type="file"
-              onChange={handleLogoChange}
-              InputLabelProps={{ shrink: true }}
-            />
-            {logo && (
-              <Typography variant="caption" color="text.secondary">
-                Logo seleccionado: {logo.name}
-              </Typography>
-            )}
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              label="Imagen"
-              variant="outlined"
-              type="file"
-              onChange={handleImagenChange}
-              InputLabelProps={{ shrink: true }}
-            />
-            {imagen && (
-              <Typography variant="caption" color="text.secondary">
-                Imagen seleccionada: {imagen.name}
-              </Typography>
-            )}
+            <FormControl fullWidth variant="outlined">
+              <InputLabel id="tipo-evento-label">Tipo de Evento</InputLabel>
+              <Select
+                labelId="tipo-evento-label"
+                id="tipo-evento"
+                value={tipo}
+                onChange={(e) => setTipo(e.target.value)}
+                label="Tipo de Evento"
+              >
+                {eventTypes.map((eventType) => (
+                  <MenuItem key={eventType} value={eventType}>
+                    {eventType}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </Grid>
         </Grid>
         <Divider sx={{ mb: 4 }} />
@@ -319,6 +361,18 @@ function AddEventPage() {
               label="Trasmisión Virtual"
             />
           </Grid>
+          {trasmisionVirtual && (
+            <Grid item xs={12}>
+              <TextField
+                label="Link de la Transmisión Virtual"
+                variant="outlined"
+                type="url"
+                value={linkTransmisionVirtual}
+                onChange={(e) => setLinkTransmisionVirtual(e.target.value)}
+                margin="dense"
+              />
+            </Grid>
+          )}
         </Grid>
         <Divider sx={{ mb: 4 }} />
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
@@ -342,7 +396,7 @@ function AddEventPage() {
               onChange={(e) => setWebEvento(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
             <TextField
               label="Imagen Responsive (Medidas recomendadas: [aquí las medidas])"
               variant="outlined"
@@ -356,9 +410,22 @@ function AddEventPage() {
               </Typography>
             )}
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Logo"
+              variant="outlined"
+              type="file"
+              onChange={handleLogoChange}
+              InputLabelProps={{ shrink: true }}
+            />
+            {logo && (
+              <Typography variant="caption" color="text.secondary">
+                Logo seleccionado: {logo.name}
+              </Typography>
+            )}
+          </Grid>
         </Grid>
         <Box sx={{ mt: 4, display: "flex", justifyContent: "flex-end" }}>
-          {" "}
           {/* Añadiendo margen superior y alineando a la derecha */}
           <Button
             variant="contained"

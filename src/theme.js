@@ -39,7 +39,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {},
         outlined: {
-          borderColor: "#678e29", 
+          borderColor: "#678e29",
         },
       },
       defaultProps: {
@@ -47,6 +47,14 @@ const theme = createTheme({
         variant: "outlined",
         margin: "dense",
         color: "secondary",
+      },
+    },
+    MuiOutlinedInput: {
+      // Agrega esta sección o modifícala si ya existe
+      styleOverrides: {
+        notchedOutline: {
+          borderColor: "#678e29 !important",
+        },
       },
     },
   },
