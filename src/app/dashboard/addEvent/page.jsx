@@ -18,8 +18,8 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useEvents } from "@/app/context/EventContext"; // Importa el hook
-import { useTheme } from "@mui/material/styles"; // Importa el hook para acceder al tema
+import { useEvents } from "@/app/context/EventContext";
+import { useTheme } from "@mui/material/styles";
 
 const eventTypes = [
   "Asociativos",
@@ -32,18 +32,20 @@ const eventTypes = [
 ];
 
 function AddEventPage() {
-  const theme = useTheme(); // Accede al tema
-  const { addEvent } = useEvents(); // Accede a la función addEvent desde el contexto
+  const theme = useTheme();
+  const { addEvent } = useEvents();
 
-  // State para los campos del formulario
   const [nombre, setNombre] = useState("");
+  const [numeroEdicion, setNumeroEdicion] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const [tipoRotacion, setTipoRotacion] = useState("");
   const [sede, setSede] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [mapsUrl, setMapsUrl] = useState("");
   const [tipo, setTipo] = useState("");
   const [logo, setLogo] = useState(null);
   const [imagen, setImagen] = useState(null);
+  const [frecuencia, setFrecuencia] = useState("");
   const [asistenciaLocales, setAsistenciaLocales] = useState("");
   const [asistenciaNacionales, setAsistenciaNacionales] = useState("");
   const [asistenciaExtranjeros, setAsistenciaExtranjeros] = useState("");
@@ -62,12 +64,12 @@ function AddEventPage() {
   const handleAddEventSubmit = () => {
     const newEvent = {
       nombre,
+      numeroEdicion: numeroEdicion,
       descripcion,
       sede,
       ciudad,
       mapsUrl,
       dateTimes: dateTimes.map((dt) => ({
-        // Mapea el array de fechas y horas
         fechaDesde: dt.fechaDesde,
         fechaHasta: dt.fechaHasta,
         horaDesde: dt.horaDesde,
@@ -81,6 +83,8 @@ function AddEventPage() {
         national: asistenciaNacionales,
         foreign: asistenciaExtranjeros,
       },
+      frecuencia: frecuencia,
+      tipoRotacion: tipoRotacion,
       virtualTransmission: trasmisionVirtual,
       transmissionLink: trasmisionVirtual ? linkTransmisionVirtual : null,
       organizador,
@@ -109,6 +113,31 @@ function AddEventPage() {
       { fechaDesde: "", fechaHasta: "", horaDesde: "", horaHasta: "" },
     ]);
   };
+
+  const frequencyOptions = [
+    "Unico",
+    "Trismestral",
+    "Cuatrimestral",
+    "Semestral",
+    "Anual",
+    "Bienal",
+    "Trienal",
+    "Cuatrianual",
+    "Irregular",
+    "No sabe no contesta NS/NC",
+  ];
+
+  const rotationTypeOptions = [
+    "Local",
+    "Provincial",
+    "Regional",
+    "Nacional",
+    "Internacional - Mercosur",
+    "Internacional - Sudamerica",
+    "Internacional - Latinoamerica",
+    "Internacional - Panamerica",
+    "Internacional - Global",
+  ];
 
   const handleRemoveDateTime = (index) => {
     if (dateTimes.length > 1) {
@@ -154,27 +183,28 @@ function AddEventPage() {
         <ArrowBackIcon />
       </Link>
       <Container maxWidth="md" sx={{ mt: 6, paddingBottom: 4 }}>
-        {" "}
-        {/* Aumentando el margen superior */}
         <Typography variant="h4" component="h1" color="primary" gutterBottom>
-          {" "}
-          {/* Cambiando a h4 para menos énfasis */}
           Agregar Nuevo Evento
         </Typography>
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
-          {" "}
-          {/* Añadiendo margen superior */}
           Información Básica
         </Typography>
         <Grid container spacing={3} mb={3}>
-          {" "}
-          {/* Aumentando el espaciado */}
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={9}>
             <TextField
               label="Nombre del Evento"
               variant="outlined"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <TextField
+              label="Número de Edición"
+              variant="outlined"
+              type="number"
+              value={numeroEdicion}
+              onChange={(e) => setNumeroEdicion(e.target.value)}
             />
           </Grid>
           <Grid item xs={12}>
@@ -186,6 +216,60 @@ function AddEventPage() {
               value={descripcion}
               onChange={(e) => setDescripcion(e.target.value)}
             />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="tipo-evento-label">Tipo de Evento</InputLabel>
+              <Select
+                labelId="tipo-evento-label"
+                id="tipo-evento"
+                value={tipo}
+                onChange={(e) => setTipo(e.target.value)}
+                label="Tipo de Evento"
+              >
+                {eventTypes.map((eventType) => (
+                  <MenuItem key={eventType} value={eventType}>
+                    {eventType}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="frecuencia-label">Frecuencia</InputLabel>
+              <Select
+                labelId="frecuencia-label"
+                id="frecuencia"
+                value={frecuencia}
+                onChange={(e) => setFrecuencia(e.target.value)}
+                label="Frecuencia"
+              >
+                {frequencyOptions.map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="tipo-rotacion-label">Tipo de Rotación</InputLabel>
+              <Select
+                labelId="tipo-rotacion-label"
+                id="tipo-rotacion"
+                value={tipoRotacion}
+                onChange={(e) => setTipoRotacion(e.target.value)}
+                label="Tipo de Rotación"
+              >
+                {rotationTypeOptions.map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </Grid>
         </Grid>
         <Divider sx={{ mb: 4 }} />
@@ -292,30 +376,6 @@ function AddEventPage() {
           <Button onClick={handleAddDateTime} color="primary">
             + Agregar otro día y hora
           </Button>
-        </Grid>
-        <Divider sx={{ mb: 4 }} />
-        <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
-          Identidad
-        </Typography>
-        <Grid container spacing={3} mb={3}>
-          <Grid item xs={12} sm={6}>
-            <FormControl fullWidth variant="outlined">
-              <InputLabel id="tipo-evento-label">Tipo de Evento</InputLabel>
-              <Select
-                labelId="tipo-evento-label"
-                id="tipo-evento"
-                value={tipo}
-                onChange={(e) => setTipo(e.target.value)}
-                label="Tipo de Evento"
-              >
-                {eventTypes.map((eventType) => (
-                  <MenuItem key={eventType} value={eventType}>
-                    {eventType}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Grid>
         </Grid>
         <Divider sx={{ mb: 4 }} />
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
