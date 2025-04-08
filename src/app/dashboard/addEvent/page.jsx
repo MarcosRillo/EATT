@@ -32,12 +32,17 @@ function AddEventPage() {
   const [subtipo, setSubtipo] = useState("");
   const [subtiposDisponibles, setSubtiposDisponibles] = useState([]);
   const [tipoRotacion, setTipoRotacion] = useState("");
+  const [frecuencia, setFrecuencia] = useState("");
+  const [origen, setOrigen] = useState("");
+  const [tema, setTema] = useState("");
+  const [otroTema, setOtroTema] = useState("");
+
   const [sede, setSede] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [mapsUrl, setMapsUrl] = useState("");
+
   const [logo, setLogo] = useState(null);
   const [imagen, setImagen] = useState(null);
-  const [frecuencia, setFrecuencia] = useState("");
   const [asistenciaLocales, setAsistenciaLocales] = useState("");
   const [asistenciaNacionales, setAsistenciaNacionales] = useState("");
   const [asistenciaExtranjeros, setAsistenciaExtranjeros] = useState("");
@@ -60,6 +65,8 @@ function AddEventPage() {
       descripcion,
       type: tipo,
       subtype: subtipo,
+      origen: origen,
+      tema: tema === "otros" ? otroTema : tema,
       sede,
       ciudad,
       mapsUrl,
@@ -190,6 +197,13 @@ function AddEventPage() {
     ],
   };
 
+  const originOptions = [
+    "Academico",
+    "Gubernamental",
+    "Asociativo / Sin fines de lucro",
+    "Empresarial",
+  ];
+
   const frequencyOptions = [
     "Unico",
     "Trismestral",
@@ -215,6 +229,51 @@ function AddEventPage() {
     "Internacional - Global",
   ];
 
+  const themeOptions = [
+    "Agricultura y ganaderia",
+    "Alimentos",
+    "Arquitectura",
+    "Arte y desenio",
+    "Ciencias historicas y sociales",
+    "Ciencias naturales y exactas",
+    "Comercio",
+    "Comunicacion",
+    "Cosmetica y estetica",
+    "Cultura",
+    "Deporte",
+    "Derecho",
+    "Moda",
+    "Ecologia",
+    "Economia",
+    "Educacion",
+    "Energia",
+    "Entretenimiento",
+    "Farmacia",
+    "Gastronomia",
+    "Geografia",
+    "Gobierno / Sindical",
+    "Industrial",
+    "Linguistica / Idioma",
+    "Literatura",
+    "Logistica",
+    "Management / Negocios",
+    "Matematica y estadistica",
+    "Medicina",
+    "Ns / nc",
+    "Odontologia",
+    "Packaging y regaleria",
+    "Psicologia",
+    "Religion",
+    "Segurida",
+    "Seguros",
+    "Servicios",
+    "Tecnologia",
+    "Trasporte",
+    "Turismo y hoteleria",
+    "Veterinaria",
+    "otros",
+  ];
+
   const handleRemoveDateTime = (index) => {
     if (dateTimes.length > 1) {
       const newDateTimes = [...dateTimes];
@@ -235,6 +294,13 @@ function AddEventPage() {
     setSubtiposDisponibles(eventSubtypes[event.target.value] || []);
   };
 
+  const handleTemaChange = (event) => {
+    setTema(event.target.value);
+    if (event.target.value !== "otros") {
+      setOtroTema(""); // Limpia el valor de 'otroTema' si se selecciona una opción predefinida
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -250,15 +316,15 @@ function AddEventPage() {
           top: "16px",
           left: "16px",
           zIndex: 3,
-          backgroundColor: theme.palette.primary.main, // Usando el color primario del tema
-          color: theme.palette.background.default, // Texto blanco
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.background.default,
           cursor: "pointer",
-          fontSize: "1.2rem", // Reduciendo un poco el tamaño
-          borderRadius: "4px", // Haciendo los bordes más acordes al tema
-          padding: "8px", // Aumentando un poco el padding
+          fontSize: "1.2rem",
+          borderRadius: "4px",
+          padding: "8px",
           transition: "background-color 0.3s ease",
           "&:hover": {
-            backgroundColor: theme.palette.primary.dark, // Un tono más oscuro al pasar el ratón
+            backgroundColor: theme.palette.primary.dark,
           },
         }}
       >
@@ -337,6 +403,54 @@ function AddEventPage() {
               </Select>
             </FormControl>
           </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="origen-label">Origen</InputLabel>
+              <Select
+                labelId="origen-label"
+                id="origen"
+                value={origen}
+                onChange={(e) => setOrigen(e.target.value)}
+                label="Origen"
+              >
+                {originOptions.map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="tema-label">Tema</InputLabel>
+              <Select
+                labelId="tema-label"
+                id="tema"
+                value={tema}
+                onChange={handleTemaChange} // Asegúrate de usar esta función
+                label="Tema"
+              >
+                {themeOptions.map((option) => (
+                  <MenuItem key={option} value={option}>
+                    {option}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          {tema === "otros" && (
+            <Grid item xs={12}>
+              <TextField
+                label="Otro Tema"
+                variant="outlined"
+                margin="dense"
+                value={otroTema}
+                onChange={(e) => setOtroTema(e.target.value)}
+                fullWidth
+              />
+            </Grid>
+          )}
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth variant="outlined" margin="dense">
               <InputLabel id="frecuencia-label">Frecuencia</InputLabel>
