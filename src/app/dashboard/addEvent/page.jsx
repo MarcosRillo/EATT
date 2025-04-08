@@ -36,10 +36,18 @@ function AddEventPage() {
   const [origen, setOrigen] = useState("");
   const [tema, setTema] = useState("");
   const [otroTema, setOtroTema] = useState("");
+  const [mesasCoffeeBreak, setMesasCoffeeBreak] = useState(false);
+  const [cateringAlmuerzo, setCateringAlmuerzo] = useState(false);
+  const [cateringCena, setCateringCena] = useState(false);
+  const [paquetePreEvento, setPaquetePreEvento] = useState(false);
+  const [paquetePostEvento, setPaquetePostEvento] = useState(false);
 
+  const [ultimaSedeAnterior, setUltimaSedeAnterior] = useState("");
+  const [proximaSede, setProximaSede] = useState("");
   const [sede, setSede] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [mapsUrl, setMapsUrl] = useState("");
+  const [salonesUtilizados, setSalonesUtilizados] = useState("");
 
   const [logo, setLogo] = useState(null);
   const [imagen, setImagen] = useState(null);
@@ -53,6 +61,7 @@ function AddEventPage() {
   );
   const [productor, setProductor] = useState("");
   const [webEvento, setWebEvento] = useState("");
+
   const [imagenResponsive, setImagenResponsive] = useState(null);
   const [dateTimes, setDateTimes] = useState([
     { fechaDesde: "", fechaHasta: "", horaDesde: "", horaHasta: "" },
@@ -70,6 +79,8 @@ function AddEventPage() {
       sede,
       ciudad,
       mapsUrl,
+      ultimaSedeAnterior: ultimaSedeAnterior,
+      proximaSede: proximaSede,
       dateTimes: dateTimes.map((dt) => ({
         fechaDesde: dt.fechaDesde,
         fechaHasta: dt.fechaHasta,
@@ -487,6 +498,68 @@ function AddEventPage() {
               </Select>
             </FormControl>
           </Grid>
+          <Grid container spacing={3} mb={3} sx={{ marginTop: "10px", textAlign: "center"}}>
+            <Grid item xs={12} sm={4}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={mesasCoffeeBreak}
+                    onChange={(e) => setMesasCoffeeBreak(e.target.checked)}
+                    color="secondary"
+                  />
+                }
+                label="Mesas de Coffee Break"
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={cateringAlmuerzo}
+                    onChange={(e) => setCateringAlmuerzo(e.target.checked)}
+                    color="secondary"
+                  />
+                }
+                label="Catering de almuerzo"
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={cateringCena}
+                    onChange={(e) => setCateringCena(e.target.checked)}
+                    color="secondary"
+                  />
+                }
+                label="Catering de cena"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={paquetePreEvento}
+                    onChange={(e) => setPaquetePreEvento(e.target.checked)}
+                    color="secondary"
+                  />
+                }
+                label="Paquete pre evento"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={paquetePostEvento}
+                    onChange={(e) => setPaquetePostEvento(e.target.checked)}
+                    color="secondary"
+                  />
+                }
+                label="Paquete post evento"
+              />
+            </Grid>
+          </Grid>
         </Grid>
         <Divider sx={{ mb: 4 }} />
         <Typography variant="h6" color="primary" gutterBottom sx={{ mt: 3 }}>
@@ -511,10 +584,34 @@ function AddEventPage() {
           </Grid>
           <Grid item xs={12}>
             <TextField
+              label="Salón/Salones Utilizados"
+              variant="outlined"
+              value={salonesUtilizados}
+              onChange={(e) => setSalonesUtilizados(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
               label="Maps (URL o Embed)"
               variant="outlined"
               value={mapsUrl}
               onChange={(e) => setMapsUrl(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Última sede (anterior)"
+              variant="outlined"
+              value={ultimaSedeAnterior}
+              onChange={(e) => setUltimaSedeAnterior(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Próxima sede"
+              variant="outlined"
+              value={proximaSede}
+              onChange={(e) => setProximaSede(e.target.value)}
             />
           </Grid>
         </Grid>
