@@ -21,16 +21,6 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useEvents } from "@/app/context/EventContext";
 import { useTheme } from "@mui/material/styles";
 
-const eventTypes = [
-  "Asociativos",
-  "Corporativos",
-  "Gubernamentales",
-  "Deporte",
-  "Cultura",
-  "Académico",
-  "Otros",
-];
-
 function AddEventPage() {
   const theme = useTheme();
   const { addEvent } = useEvents();
@@ -38,11 +28,13 @@ function AddEventPage() {
   const [nombre, setNombre] = useState("");
   const [numeroEdicion, setNumeroEdicion] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [subtipo, setSubtipo] = useState("");
+  const [subtiposDisponibles, setSubtiposDisponibles] = useState([]);
   const [tipoRotacion, setTipoRotacion] = useState("");
   const [sede, setSede] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [mapsUrl, setMapsUrl] = useState("");
-  const [tipo, setTipo] = useState("");
   const [logo, setLogo] = useState(null);
   const [imagen, setImagen] = useState(null);
   const [frecuencia, setFrecuencia] = useState("");
@@ -66,6 +58,8 @@ function AddEventPage() {
       nombre,
       numeroEdicion: numeroEdicion,
       descripcion,
+      type: tipo,
+      subtype: subtipo,
       sede,
       ciudad,
       mapsUrl,
@@ -75,7 +69,6 @@ function AddEventPage() {
         horaDesde: dt.horaDesde,
         horaHasta: dt.horaHasta,
       })),
-      type: tipo,
       logo: logo ? logo.name : null,
       image: imagen ? imagen.name : null,
       estimatedAttendance: {
@@ -112,6 +105,89 @@ function AddEventPage() {
       ...dateTimes,
       { fechaDesde: "", fechaHasta: "", horaDesde: "", horaHasta: "" },
     ]);
+  };
+
+  const eventTypes = [
+    "Asociativos",
+    "Corporativos",
+    "Gubernamentales",
+    "Deporte",
+    "Cultura",
+    "Académico",
+    "Otros",
+  ];
+
+  const eventSubtypes = {
+    Asociativos: [
+      "Congreso",
+      "Convención",
+      "Seminario",
+      "Taller",
+      "Simposio",
+      "Foro",
+      "Mesa Redonda",
+      "Networking",
+    ],
+    Corporativos: [
+      "Conferencia",
+      "Reunión de Negocios",
+      "Lanzamiento de Producto",
+      "Evento de Team Building",
+      "Incentivo",
+      "Capacitación",
+      "Junta Directiva",
+      "Evento de Fin de Año",
+    ],
+    Gubernamentales: [
+      "Acto Oficial",
+      "Ceremonia",
+      "Rueda de Prensa",
+      "Foro Público",
+      "Audiencia Pública",
+      "Debate",
+      "Conferencia de Prensa",
+      "Evento Protocolario",
+    ],
+    Deporte: [
+      "Partido",
+      "Competencia",
+      "Torneo",
+      "Maratón",
+      "Carrera",
+      "Exhibición",
+      "Clase Magistral",
+      "Evento de Premiación",
+    ],
+    Cultura: [
+      "Concierto",
+      "Obra de Teatro",
+      "Exposición de Arte",
+      "Festival",
+      "Proyección de Cine",
+      "Danza",
+      "Presentación de Libro",
+      "Feria Artesanal",
+    ],
+    Académico: [
+      "Clase",
+      "Seminario",
+      "Taller",
+      "Conferencia",
+      "Simposio",
+      "Congreso",
+      "Panel de Discusión",
+      "Entrega de Diplomas",
+    ],
+    Otros: [
+      "Evento Benéfico",
+      "Subasta",
+      "Feria",
+      "Mercado",
+      "Celebración Privada",
+      "Evento Religioso",
+      "Evento Gastronómico",
+      "Otro",
+    ],
   };
 
   const frequencyOptions = [
@@ -151,6 +227,12 @@ function AddEventPage() {
     const newDateTimes = [...dateTimes];
     newDateTimes[index][name] = value;
     setDateTimes(newDateTimes);
+  };
+
+  const handleTipoEventoChange = (event) => {
+    setTipo(event.target.value);
+    setSubtipo("");
+    setSubtiposDisponibles(eventSubtypes[event.target.value] || []);
   };
 
   return (
@@ -224,12 +306,32 @@ function AddEventPage() {
                 labelId="tipo-evento-label"
                 id="tipo-evento"
                 value={tipo}
-                onChange={(e) => setTipo(e.target.value)}
+                onChange={handleTipoEventoChange} // Asegúrate de usar esta función
                 label="Tipo de Evento"
               >
                 {eventTypes.map((eventType) => (
                   <MenuItem key={eventType} value={eventType}>
                     {eventType}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth variant="outlined" margin="dense">
+              <InputLabel id="subtipo-evento-label">
+                Subtipo de Evento
+              </InputLabel>
+              <Select
+                labelId="subtipo-evento-label"
+                id="subtipo-evento"
+                value={subtipo}
+                onChange={(e) => setSubtipo(e.target.value)}
+                label="Subtipo de Evento"
+              >
+                {subtiposDisponibles.map((subtype) => (
+                  <MenuItem key={subtype} value={subtype}>
+                    {subtype}
                   </MenuItem>
                 ))}
               </Select>
