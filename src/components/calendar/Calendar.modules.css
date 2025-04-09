@@ -132,7 +132,7 @@
   color: #ffffff; /* Establece el color del texto de los eventos */
   border: none; /* Elimina el borde de los eventos */
   padding: 5px 8px; /* Reduce el relleno de los eventos */
-  margin: 2px 5px; /* Reduce el margen de los eventos */
+  margin: 0; /* Reduce el margen de los eventos */
   border-radius: 4px; /* Añade un ligero radio a los bordes de los eventos */
   font-size: 0.85em; /* Reduce ligeramente el tamaño de la fuente de los eventos */
   overflow: hidden; /* Oculta el contenido del evento que se desborda */
@@ -240,6 +240,5 @@
   color: #ffffff; /* Establece el color del texto */
   border-radius: 4px; /* Añade un radio a los bordes */
   padding: 4px 8px; /* Añade relleno */
-  margin: 2px 5px; /* Añade margen */
   font-size: 0.9em; /* Establece el tamaño de la fuente */
 }
