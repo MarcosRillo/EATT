@@ -56,9 +56,6 @@ function AddEventPage() {
   const [asistenciaExtranjeros, setAsistenciaExtranjeros] = useState("");
   const [trasmisionVirtual, setTrasmisionVirtual] = useState(false);
   const [linkTransmisionVirtual, setLinkTransmisionVirtual] = useState("");
-  const [organizador, setOrganizador] = useState(
-    "Nombre de la Empresa (por defecto)"
-  );
   const [productor, setProductor] = useState("");
   const [webEvento, setWebEvento] = useState("");
 
@@ -76,8 +73,16 @@ function AddEventPage() {
       subtype: subtipo,
       origen: origen,
       tema: tema === "otros" ? otroTema : tema,
+      frecuencia: frecuencia,
+      tipoRotacion: tipoRotacion,
+      mesasCoffeeBreak: mesasCoffeeBreak,
+      cateringAlmuerzo: cateringAlmuerzo,
+      cateringCena: cateringCena,
+      paquetePreEvento: paquetePreEvento,
+      paquetePostEvento: paquetePostEvento,
       sede,
       ciudad,
+      salonesUtilizados: salonesUtilizados,
       mapsUrl,
       ultimaSedeAnterior: ultimaSedeAnterior,
       proximaSede: proximaSede,
@@ -87,27 +92,24 @@ function AddEventPage() {
         horaDesde: dt.horaDesde,
         horaHasta: dt.horaHasta,
       })),
-      logo: logo ? logo.name : null,
-      image: imagen ? imagen.name : null,
       estimatedAttendance: {
         local: asistenciaLocales,
         national: asistenciaNacionales,
         foreign: asistenciaExtranjeros,
       },
-      frecuencia: frecuencia,
-      tipoRotacion: tipoRotacion,
       virtualTransmission: trasmisionVirtual,
       transmissionLink: trasmisionVirtual ? linkTransmisionVirtual : null,
-      organizador,
       producer: productor || organizador,
       website: webEvento,
+      logo: logo ? logo.name : null,
+      image: imagen ? imagen.name : null,
       responsiveImage: imagenResponsive ? imagenResponsive.name : null,
     };
     addEvent(newEvent);
   };
 
   const handleLogoChange = (event) => {
-    setLogo(event.target.files[0]);
+    setLogo(event.target.files[0])
   };
 
   const handleImagenChange = (event) => {
