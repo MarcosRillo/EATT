@@ -1554,12 +1554,10 @@ export const EventsProvider = ({ children }) => {
       ultimaSedeAnterior: "La Rural Predio Ferial",
       proximaSede: "La Rural Predio Ferial",
       dateTimes: [
-        {
-          fechaDesde: "2025-04-22",
-          fechaHasta: "2025-05-12",
-          horaDesde: "14:00",
-          horaHasta: "22:00",
-        },
+        { fechaDesde: "2025-05-05", fechaHasta: "2025-05-05", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 5 de mayo
+        { fechaDesde: "2025-05-12", fechaHasta: "2025-05-12", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 12 de mayo
+        { fechaDesde: "2025-05-19", fechaHasta: "2025-05-19", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 19 de mayo
+        { fechaDesde: "2025-05-26", fechaHasta: "2025-05-26", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 26 de mayo
       ],
       estimatedAttendance: {
         local: "50000",
@@ -5029,6 +5027,42 @@ export const EventsProvider = ({ children }) => {
       image: "imagen_entrega_diplomas.jpg",
       responsiveImage: "imagen_entrega_diplomas_responsive.jpg",
     },
+    {
+      nombre: "Evento Semanal de los Lunes",
+      numeroEdicion: null,
+      descripcion: "Este evento se repite todos los lunes del mes de mayo de 2025.",
+      type: "Otros", // Puedes cambiar el tipo si es necesario
+      subtype: "Evento Semanal", // Puedes cambiar el subtipo si es necesario
+      origen: "Otro", // Puedes cambiar el origen si es necesario
+      tema: "General", // Puedes cambiar el tema si es necesario
+      frecuencia: "Semanal",
+      tipoRotacion: "Local",
+      mesasCoffeeBreak: false,
+      cateringAlmuerzo: false,
+      cateringCena: false,
+      paquetePreEvento: false,
+      paquetePostEvento: false,
+      sede: "Lugar por Definir", // Puedes definir la sede
+      ciudad: "San Miguel de Tucumán", // Mantengo la ciudad por contexto
+      salonesUtilizados: null,
+      mapsUrl: null,
+      ultimaSedeAnterior: null,
+      proximaSede: null,
+      dateTimes: [
+        { fechaDesde: "2025-05-05", fechaHasta: "2025-05-05", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 5 de mayo
+        { fechaDesde: "2025-05-12", fechaHasta: "2025-05-12", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 12 de mayo
+        { fechaDesde: "2025-05-19", fechaHasta: "2025-05-19", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 19 de mayo
+        { fechaDesde: "2025-05-26", fechaHasta: "2025-05-26", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 26 de mayo
+      ],
+      estimatedAttendance: { local: "10", national: "0", foreign: "0" },
+      virtualTransmission: false,
+      transmissionLink: null,
+      producer: null,
+      website: null,
+      logo: null,
+      image: null,
+      responsiveImage: null,
+    }
   ];
 
   const [events, setEvents] = useState(initialEvents);
