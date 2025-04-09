@@ -57,8 +57,9 @@ function PublicCalendar() {
     showMore: (total) => `+(${total}) más`,
   };
 
-  const handleEventClick = (event) => {
-    setSelectedEvent(event);
+  const handleEventClick = (calendarEvent) => {
+    // El 'calendarEvent' aquí contendrá el evento original completo
+    setSelectedEvent(calendarEvent);
     setOpenModal(true);
   };
 
@@ -67,16 +68,26 @@ function PublicCalendar() {
     setSelectedEvent(null);
   };
 
+  // Formatear la fecha y hora para mostrar en el modal
+  const formatDate = (dateString) => {
+    return moment(dateString).format("dddd, DD [de] MMMM [de]YYYY");
+  };
+
   return (
     <div style={{ height: "85vh", marginBottom: "300px" }}>
       <Calendar
         localizer={localizer}
-        events={events.map((event) => ({
-          start: new Date(event.date + "T" + event.timeStart),
-          end: new Date(event.date + "T" + event.timeEnd),
-          title: event.title,
-          ...event,
-        }))}
+        events={events.reduce((acc, event) => {
+          event.dateTimes.forEach((dateTime) => {
+            acc.push({
+              start: new Date(dateTime.fechaDesde + "T" + dateTime.horaDesde),
+              end: new Date(dateTime.fechaHasta + "T" + dateTime.horaHasta),
+              title: event.nombre, // Usamos el nombre del evento
+              ...event, // Pasamos todas las propiedades del evento original
+            });
+          });
+          return acc;
+        }, [])}
         defaultView={Views.MONTH}
         views={{
           month: true,
@@ -95,8 +106,8 @@ function PublicCalendar() {
         fullWidth
         sx={{
           "& .MuiPaper-root": {
-            backgroundColor: theme.palette.background.paper, 
-            color: theme.palette.text.primary, 
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
             borderRadius: "4px",
             boxShadow: theme.shadows[3],
           },
@@ -114,7 +125,7 @@ function PublicCalendar() {
                 padding: "16px 24px",
               }}
             >
-              {selectedEvent.title}
+              {selectedEvent.nombre} {/* Usamos el nombre del evento */}
               <IconButton
                 onClick={handleCloseModal}
                 sx={{ color: theme.palette.background.default }}
@@ -138,24 +149,39 @@ function PublicCalendar() {
                   gutterBottom
                   color={theme.palette.primary.main}
                 >
-                  {selectedEvent.title}
+                  {selectedEvent.nombre} {/* Usamos el nombre del evento */}
                 </Typography>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                  <CalendarTodayIcon
-                    sx={{ mr: 1, color: theme.palette.secondary.main }}
-                  />
-                  <Typography variant="subtitle1">
-                    {moment(selectedEvent.date).format(
-                      "dddd, DD [de] MMMM [de]YYYY"
-                    )}
-                  </Typography>
-                </Box>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                  <ScheduleIcon
-                    sx={{ mr: 1, color: theme.palette.secondary.main }}
-                  />
-                  <Typography variant="subtitle1">{`${selectedEvent.timeStart} - ${selectedEvent.timeEnd}`}</Typography>
-                </Box>
+                {selectedEvent.dateTimes &&
+                  selectedEvent.dateTimes.map((dt, index) => (
+                    <Box key={index}>
+                      <Box
+                        sx={{ display: "flex", alignItems: "center", mb: 1 }}
+                      >
+                        <CalendarTodayIcon
+                          sx={{ mr: 1, color: theme.palette.secondary.main }}
+                        />
+                        <Typography variant="subtitle1">
+                          {formatDate(dt.fechaDesde)}
+                          {dt.fechaDesde !== dt.fechaHasta &&
+                            ` - ${formatDate(dt.fechaHasta)}`}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{ display: "flex", alignItems: "center", mb: 1 }}
+                      >
+                        <ScheduleIcon
+                          sx={{ mr: 1, color: theme.palette.secondary.main }}
+                        />
+                        <Typography variant="subtitle1">{`${dt.horaDesde} - ${dt.horaHasta}`}</Typography>
+                      </Box>
+                      {selectedEvent.dateTimes.length > 1 &&
+                        index < selectedEvent.dateTimes.length - 1 && (
+                          <Box
+                            sx={{ my: 1, borderBottom: "1px dashed grey" }}
+                          />
+                        )}
+                    </Box>
+                  ))}
                 <Typography
                   variant="h6"
                   component="h3"
@@ -164,7 +190,7 @@ function PublicCalendar() {
                   Descripción
                 </Typography>
                 <Typography variant="body1" paragraph>
-                  {selectedEvent.description}
+                  {selectedEvent.descripcion}
                 </Typography>
                 {selectedEvent.estimatedAttendance && (
                   <>
@@ -182,7 +208,7 @@ function PublicCalendar() {
                     >
                       Total:{" "}
                       {Object.values(selectedEvent.estimatedAttendance).reduce(
-                        (a, b) => a + b,
+                        (a, b) => parseInt(a) + parseInt(b), // Asegúrate de parsear a número
                         0
                       )}{" "}
                       personas
@@ -260,14 +286,14 @@ function PublicCalendar() {
                     )}
                   </>
                 )}
-                {selectedEvent.organizador && (
+                {selectedEvent.productor && ( // Usamos 'productor' en lugar de 'organizador'
                   <Box sx={{ mt: 2 }}>
                     <Typography
                       variant="h6"
                       component="h3"
                       sx={{ mb: 1, color: theme.palette.primary.main }}
                     >
-                      Organización Responsable
+                      Productor
                     </Typography>
                     <Typography
                       variant="body2"
@@ -276,11 +302,11 @@ function PublicCalendar() {
                       <AccountCircleIcon
                         sx={{ mr: 1, color: theme.palette.secondary.main }}
                       />
-                      {selectedEvent.organizador}
+                      {selectedEvent.productor}
                     </Typography>
                   </Box>
                 )}
-                {selectedEvent.tipo && (
+                {selectedEvent.type && ( // Usamos 'type' en lugar de 'tipo'
                   <Box sx={{ mt: 2 }}>
                     <Typography
                       variant="h6"
@@ -296,11 +322,11 @@ function PublicCalendar() {
                       <CategoryIcon
                         sx={{ mr: 1, color: theme.palette.secondary.main }}
                       />
-                      {selectedEvent.tipo}
+                      {selectedEvent.type}
                     </Typography>
                   </Box>
                 )}
-                {selectedEvent.webEvento && (
+                {selectedEvent.website && ( // Usamos 'website' en lugar de 'webEvento'
                   <Box sx={{ mt: 2 }}>
                     <Typography
                       variant="h6"
@@ -317,7 +343,7 @@ function PublicCalendar() {
                         sx={{ mr: 1, color: theme.palette.secondary.main }}
                       />
                       <MuiLink
-                        href={selectedEvent.webEvento}
+                        href={selectedEvent.website}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
