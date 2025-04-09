@@ -37,6 +37,17 @@ import theme from "@/theme";
 
 const localizer = momentLocalizer(moment);
 
+// Define un objeto para mapear tipos de eventos a colores
+const eventColors = {
+  Asociativos: theme.palette.primary.light,
+  Corporativos: theme.palette.success.light,
+  Gubernamentales: theme.palette.warning.light,
+  Deporte: theme.palette.info.light,
+  Cultura: theme.palette.secondary.light,
+  Académico: theme.palette.error.light,
+  Otros: theme.palette.grey[300],
+};
+
 function PublicCalendar() {
   const { events } = useEvents();
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -58,7 +69,6 @@ function PublicCalendar() {
   };
 
   const handleEventClick = (calendarEvent) => {
-    // El 'calendarEvent' aquí contendrá el evento original completo
     setSelectedEvent(calendarEvent);
     setOpenModal(true);
   };
@@ -68,9 +78,23 @@ function PublicCalendar() {
     setSelectedEvent(null);
   };
 
-  // Formatear la fecha y hora para mostrar en el modal
   const formatDate = (dateString) => {
     return moment(dateString).format("dddd, DD [de] MMMM [de]YYYY");
+  };
+
+  const eventStyleGetter = (event, start, end, isSelected) => {
+    const backgroundColor = eventColors[event.type] || theme.palette.grey[500]; // Usa un color por defecto si el tipo no está en el mapa
+    const style = {
+      backgroundColor: backgroundColor,
+      borderRadius: "4px",
+      opacity: 0.8,
+      color: "white", // Puedes ajustar el color del texto según el fondo
+      border: "0px",
+      display: "block",
+    };
+    return {
+      style: style,
+    };
   };
 
   return (
@@ -82,8 +106,8 @@ function PublicCalendar() {
             acc.push({
               start: new Date(dateTime.fechaDesde + "T" + dateTime.horaDesde),
               end: new Date(dateTime.fechaHasta + "T" + dateTime.horaHasta),
-              title: event.nombre, // Usamos el nombre del evento
-              ...event, // Pasamos todas las propiedades del evento original
+              title: event.nombre,
+              ...event,
             });
           });
           return acc;
@@ -98,6 +122,7 @@ function PublicCalendar() {
         onSelectEvent={handleEventClick}
         style={{ width: "100%", height: "100%" }}
         messages={mensajesEnEspanol}
+        eventPropGetter={eventStyleGetter} // Pasa la función para personalizar los estilos
       />
       <Dialog
         open={openModal}
