@@ -34,6 +34,18 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-20",
+          fechaHasta: "2025-05-20",
+          horaDesde: "09:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-21",
+          fechaHasta: "2025-05-21",
+          horaDesde: "09:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-22",
           fechaHasta: "2025-05-22",
           horaDesde: "09:00",
           horaHasta: "18:00",
@@ -1127,6 +1139,54 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-11-10",
+          fechaHasta: "2025-11-10",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-11",
+          fechaHasta: "2025-11-11",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-12",
+          fechaHasta: "2025-11-12",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-13",
+          fechaHasta: "2025-11-13",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-14",
+          fechaHasta: "2025-11-14",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-15",
+          fechaHasta: "2025-11-15",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-16",
+          fechaHasta: "2025-11-16",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-17",
+          fechaHasta: "2025-11-17",
+          horaDesde: "15:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-11-18",
           fechaHasta: "2025-11-18",
           horaDesde: "15:00",
           horaHasta: "23:00",
@@ -1554,10 +1614,30 @@ export const EventsProvider = ({ children }) => {
       ultimaSedeAnterior: "La Rural Predio Ferial",
       proximaSede: "La Rural Predio Ferial",
       dateTimes: [
-        { fechaDesde: "2025-05-05", fechaHasta: "2025-05-05", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 5 de mayo
-        { fechaDesde: "2025-05-12", fechaHasta: "2025-05-12", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 12 de mayo
-        { fechaDesde: "2025-05-19", fechaHasta: "2025-05-19", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 19 de mayo
-        { fechaDesde: "2025-05-26", fechaHasta: "2025-05-26", horaDesde: "15:00", horaHasta: "18:00" }, // Lunes 26 de mayo
+        {
+          fechaDesde: "2025-05-05",
+          fechaHasta: "2025-05-05",
+          horaDesde: "15:00",
+          horaHasta: "18:00",
+        }, // Lunes 5 de mayo
+        {
+          fechaDesde: "2025-05-12",
+          fechaHasta: "2025-05-12",
+          horaDesde: "15:00",
+          horaHasta: "18:00",
+        }, // Lunes 12 de mayo
+        {
+          fechaDesde: "2025-05-19",
+          fechaHasta: "2025-05-19",
+          horaDesde: "15:00",
+          horaHasta: "18:00",
+        }, // Lunes 19 de mayo
+        {
+          fechaDesde: "2025-05-26",
+          fechaHasta: "2025-05-26",
+          horaDesde: "15:00",
+          horaHasta: "18:00",
+        }, // Lunes 26 de mayo
       ],
       estimatedAttendance: {
         local: "50000",
@@ -4260,6 +4340,24 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-05",
+          fechaHasta: "2025-05-05",
+          horaDesde: "09:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-06",
+          fechaHasta: "2025-05-06",
+          horaDesde: "09:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-07",
+          fechaHasta: "2025-05-07",
+          horaDesde: "09:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-08",
           fechaHasta: "2025-05-08",
           horaDesde: "09:00",
           horaHasta: "18:00",
@@ -4299,6 +4397,12 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-10",
+          fechaHasta: "2025-05-10",
+          horaDesde: "10:00",
+          horaHasta: "17:00",
+        },
+        {
+          fechaDesde: "2025-05-11",
           fechaHasta: "2025-05-11",
           horaDesde: "10:00",
           horaHasta: "17:00",
@@ -4338,16 +4442,40 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-15",
-          fechaHasta: "2025-05-20",
+          fechaHasta: "2025-05-15",
           horaDesde: "18:00",
           horaHasta: "23:00",
         },
         {
           fechaDesde: "2025-05-16",
+          fechaHasta: "2025-05-16",
+          horaDesde: "18:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-05-17",
+          fechaHasta: "2025-05-17",
+          horaDesde: "18:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-05-18",
+          fechaHasta: "2025-05-18",
+          horaDesde: "18:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-05-19",
+          fechaHasta: "2025-05-19",
+          horaDesde: "18:00",
+          horaHasta: "23:00",
+        },
+        {
+          fechaDesde: "2025-05-20",
           fechaHasta: "2025-05-20",
-          horaDesde: "15:00",
-          horaHasta: "17:00",
-        }, // Ejemplo de múltiples fechas
+          horaDesde: "18:00",
+          horaHasta: "23:00",
+        },
       ],
       estimatedAttendance: { local: "300", national: "100", foreign: "20" },
       virtualTransmission: true,
@@ -4383,6 +4511,18 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-22",
+          fechaHasta: "2025-05-22",
+          horaDesde: "09:30",
+          horaHasta: "17:30",
+        },
+        {
+          fechaDesde: "2025-05-23",
+          fechaHasta: "2025-05-23",
+          horaDesde: "09:30",
+          horaHasta: "17:30",
+        },
+        {
+          fechaDesde: "2025-05-24",
           fechaHasta: "2025-05-24",
           horaDesde: "09:30",
           horaHasta: "17:30",
@@ -4461,6 +4601,14 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-27",
+          fechaHasta: "2025-05-27",
+          horaDesde: "09:00",
+          horaHasta: "17:00",
+        },
+      ],
+      dateTimes: [
+        {
+          fechaDesde: "2025-05-28",
           fechaHasta: "2025-05-28",
           horaDesde: "09:00",
           horaHasta: "17:00",
@@ -4623,6 +4771,24 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-01",
+          fechaHasta: "2025-05-01",
+          horaDesde: "10:00",
+          horaHasta: "20:00",
+        },
+        {
+          fechaDesde: "2025-05-02",
+          fechaHasta: "2025-05-02",
+          horaDesde: "10:00",
+          horaHasta: "20:00",
+        },
+        {
+          fechaDesde: "2025-05-03",
+          fechaHasta: "2025-05-03",
+          horaDesde: "10:00",
+          horaHasta: "20:00",
+        },
+        {
+          fechaDesde: "2025-05-04",
           fechaHasta: "2025-05-04",
           horaDesde: "10:00",
           horaHasta: "20:00",
@@ -4662,6 +4828,18 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-12",
+          fechaHasta: "2025-05-12",
+          horaDesde: "09:00",
+          horaHasta: "18:30",
+        },
+        {
+          fechaDesde: "2025-05-13",
+          fechaHasta: "2025-05-13",
+          horaDesde: "09:00",
+          horaHasta: "18:30",
+        },
+        {
+          fechaDesde: "2025-05-14",
           fechaHasta: "2025-05-14",
           horaDesde: "09:00",
           horaHasta: "18:30",
@@ -4740,6 +4918,90 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-17",
+          fechaHasta: "2025-05-17",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-18",
+          fechaHasta: "2025-05-18",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-19",
+          fechaHasta: "2025-05-19",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-20",
+          fechaHasta: "2025-05-20",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-21",
+          fechaHasta: "2025-05-21",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-22",
+          fechaHasta: "2025-05-22",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-23",
+          fechaHasta: "2025-05-23",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-24",
+          fechaHasta: "2025-05-24",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-25",
+          fechaHasta: "2025-05-25",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-26",
+          fechaHasta: "2025-05-26",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-27",
+          fechaHasta: "2025-05-27",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-28",
+          fechaHasta: "2025-05-28",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-29",
+          fechaHasta: "2025-05-29",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-30",
+          fechaHasta: "2025-05-30",
+          horaDesde: "10:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-31",
           fechaHasta: "2025-05-31",
           horaDesde: "10:00",
           horaHasta: "18:00",
@@ -4779,6 +5041,12 @@ export const EventsProvider = ({ children }) => {
       dateTimes: [
         {
           fechaDesde: "2025-05-29",
+          fechaHasta: "2025-05-29",
+          horaDesde: "14:00",
+          horaHasta: "18:00",
+        },
+        {
+          fechaDesde: "2025-05-30",
           fechaHasta: "2025-05-30",
           horaDesde: "14:00",
           horaHasta: "18:00",
@@ -5030,7 +5298,8 @@ export const EventsProvider = ({ children }) => {
     {
       nombre: "Evento Semanal de los Lunes",
       numeroEdicion: null,
-      descripcion: "Este evento se repite todos los lunes del mes de mayo de 2025.",
+      descripcion:
+        "Este evento se repite todos los lunes del mes de mayo de 2025.",
       type: "Otros", // Puedes cambiar el tipo si es necesario
       subtype: "Evento Semanal", // Puedes cambiar el subtipo si es necesario
       origen: "Otro", // Puedes cambiar el origen si es necesario
@@ -5049,10 +5318,30 @@ export const EventsProvider = ({ children }) => {
       ultimaSedeAnterior: null,
       proximaSede: null,
       dateTimes: [
-        { fechaDesde: "2025-05-05", fechaHasta: "2025-05-05", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 5 de mayo
-        { fechaDesde: "2025-05-12", fechaHasta: "2025-05-12", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 12 de mayo
-        { fechaDesde: "2025-05-19", fechaHasta: "2025-05-19", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 19 de mayo
-        { fechaDesde: "2025-05-26", fechaHasta: "2025-05-26", horaDesde: "10:00", horaHasta: "11:00" }, // Lunes 26 de mayo
+        {
+          fechaDesde: "2025-05-05",
+          fechaHasta: "2025-05-05",
+          horaDesde: "10:00",
+          horaHasta: "11:00",
+        },
+        {
+          fechaDesde: "2025-05-12",
+          fechaHasta: "2025-05-12",
+          horaDesde: "10:00",
+          horaHasta: "11:00",
+        },
+        {
+          fechaDesde: "2025-05-19",
+          fechaHasta: "2025-05-19",
+          horaDesde: "10:00",
+          horaHasta: "11:00",
+        },
+        {
+          fechaDesde: "2025-05-26",
+          fechaHasta: "2025-05-26",
+          horaDesde: "10:00",
+          horaHasta: "11:00",
+        },
       ],
       estimatedAttendance: { local: "10", national: "0", foreign: "0" },
       virtualTransmission: false,
@@ -5062,7 +5351,7 @@ export const EventsProvider = ({ children }) => {
       logo: null,
       image: null,
       responsiveImage: null,
-    }
+    },
   ];
 
   const [events, setEvents] = useState(initialEvents);
