@@ -77,20 +77,20 @@ function LoginPage() {
             </Typography>
             {currentStep === 1 && (
               <div>
+                <TextField label="DNI" />
+                <TextField label="Nombre" />
+                <TextField label="Apellido" />
+                <TextField label="Email" type="email" />
+                <TextField label="WhatsApp" />
                 <TextField
                   label="Foto de perfil"
                   type="file"
                   sx={{
                     '& .MuiInputBase-input[type="file"]': {
-                      paddingTop: "3em", // Ajusta este valor según sea necesario
+                      paddingTop: "3em", 
                     },
                   }}
                 />
-                <TextField label="DNI" />
-                <TextField label="Apellido" />
-                <TextField label="Nombre" />
-                <TextField label="Email" type="email" />
-                <TextField label="WhatsApp" />
                 <Button
                   variant="contained"
                   color="secondary"
