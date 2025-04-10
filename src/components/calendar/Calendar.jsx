@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Calendar,
   Views,
@@ -13,8 +13,9 @@ moment.locale("es");
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useEvents } from "@/app/context/EventContext";
 import theme from "@/theme";
-import EventDetailsModal from "@/components/eventDetailModal/eventDetailModal.jsx"; // Importa el nuevo componente
-import styles from "@/components/calendar/Calendar.modules.css"
+import EventDetailsModal from "@/components/eventDetailModal/eventDetailModal.jsx";
+import styles from "@/components/calendar/Calendar.modules.css";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
 const localizer = momentLocalizer(moment);
 
@@ -33,6 +34,14 @@ function PublicCalendar() {
   const { events } = useEvents();
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const [selectedType, setSelectedType] = useState("Todos"); // Estado para el tipo seleccionado
+  const [availableTypes, setAvailableTypes] = useState([]);
+
+  useEffect(() => {
+    // Obtener todos los tipos de eventos únicos al cargar el componente
+    const types = [...new Set(events.map((event) => event.type))];
+    setAvailableTypes(types);
+  }, [events]);
 
   const mensajesEnEspanol = {
     allDay: "Todo el día",
@@ -59,6 +68,10 @@ function PublicCalendar() {
     setSelectedEvent(null);
   };
 
+  const handleFilterChange = (event) => {
+    setSelectedType(event.target.value);
+  };
+
   const eventStyleGetter = (event, start, end, isSelected) => {
     const backgroundColor = eventColors[event.type] || theme.palette.grey[500];
     const style = {
@@ -74,38 +87,62 @@ function PublicCalendar() {
     };
   };
 
+  const filteredEvents =
+    selectedType === "Todos"
+      ? events
+      : events.filter((event) => event.type === selectedType);
+
   return (
-    <div style={{ height: "85vh", marginBottom: "300px" }}>
-      <Calendar
-        localizer={localizer}
-        events={events.reduce((acc, event) => {
-          event.dateTimes.forEach((dateTime) => {
-            acc.push({
-              start: new Date(dateTime.fechaDesde + "T" + dateTime.horaDesde),
-              end: new Date(dateTime.fechaHasta + "T" + dateTime.horaHasta),
-              title: event.nombre,
-              ...event,
+    <div style={{ marginBottom: "300px" }}>
+      <FormControl sx={{ m: 3, minWidth: 120 }}>
+        <InputLabel id="event-type-filter-label">Tipo de Evento</InputLabel>
+        <Select
+          labelId="event-type-filter-label"
+          id="event-type-filter"
+          value={selectedType}
+          label="Filtrar por Tipo"
+          onChange={handleFilterChange}
+        >
+          <MenuItem value="Todos">Todos los eventos</MenuItem>
+          {availableTypes.map((type) => (
+            <MenuItem key={type} value={type}>
+              {type}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      <div style={{ height: "85vh" }}>
+        <Calendar
+          localizer={localizer}
+          events={filteredEvents.reduce((acc, event) => {
+            event.dateTimes.forEach((dateTime) => {
+              acc.push({
+                start: new Date(dateTime.fechaDesde + "T" + dateTime.horaDesde),
+                end: new Date(dateTime.fechaHasta + "T" + dateTime.horaHasta),
+                title: event.nombre,
+                ...event,
+              });
             });
-          });
-          return acc;
-        }, [])}
-        defaultView={Views.MONTH}
-        views={{
-          month: true,
-          week: true,
-          day: true,
-          agenda: true,
-        }}
-        onSelectEvent={handleEventClick}
-        style={{ width: "100%", height: "100%" }}
-        messages={mensajesEnEspanol}
-        eventPropGetter={eventStyleGetter}
-      />
-      <EventDetailsModal
-        open={openModal}
-        onClose={handleCloseModal}
-        selectedEvent={selectedEvent}
-      />
+            return acc;
+          }, [])}
+          defaultView={Views.MONTH}
+          views={{
+            month: true,
+            week: true,
+            day: true,
+            agenda: true,
+          }}
+          onSelectEvent={handleEventClick}
+          style={{ width: "100%", height: "100%" }}
+          messages={mensajesEnEspanol}
+          eventPropGetter={eventStyleGetter}
+        />
+        <EventDetailsModal
+          open={openModal}
+          onClose={handleCloseModal}
+          selectedEvent={selectedEvent}
+        />
+      </div>
     </div>
   );
 }
