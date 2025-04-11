@@ -57,7 +57,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Eventos Digitales Inc.",
       website: "https://www.conferenciatech.com",
       logo: "logo_conferencia_tech.png",
-      image: "imagen_conferencia_tech.jpg",
+      // image: "imagen_conferencia_tech.jpg",
       responsiveImage: "responsive_conferencia_tech.jpg",
     },
     {
@@ -96,7 +96,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Producciones Eléctricas",
       website: "https://www.festivalindie.com.ar",
       logo: "logo_festival_indie.png",
-      image: "imagen_festival_indie.jpg",
+      // image: "imagen_festival_indie.jpg",
       responsiveImage: "responsive_festival_indie.jpg",
     },
     {
@@ -134,7 +134,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Marketing Educativo S.R.L.",
       website: "https://www.seminariomarketing.edu.ar",
       logo: "logo_seminario_marketing.png",
-      image: "imagen_seminario_marketing.jpg",
+      // image: "imagen_seminario_marketing.jpg",
       responsiveImage: "responsive_seminario_marketing.jpg",
     },
     {
@@ -173,7 +173,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Chef Vegano S.R.L.",
       website: "https://www.tallervegan.com.ar",
       logo: "logo_taller_vegan.png",
-      image: "imagen_taller_vegan.jpg",
+      // image: "imagen_taller_vegan.jpg",
       responsiveImage: "responsive_taller_vegan.jpg",
     },
     {
@@ -211,7 +211,7 @@ export const EventsProvider = ({ children }) => {
       producer: false,
       website: false,
       logo: "logo_club_deportivo.png",
-      image: "imagen_partido_futbol.jpg",
+      // image: "imagen_partido_futbol.jpg",
       responsiveImage: "responsive_partido_futbol.jpg",
     },
     {
@@ -249,7 +249,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Artistas Visuales",
       website: "https://www.museoartecontemporaneo.com",
       logo: "logo_museo_bellas_artes.png",
-      image: "imagen_exposicion_arte.jpg",
+      // image: "imagen_exposicion_arte.jpg",
       responsiveImage: "responsive_exposicion_arte.jpg",
     },
     {
@@ -288,7 +288,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Secretaría de Cultura de la Provincia",
       website: "https://www.orquestajuveniltucuman.gob.ar",
       logo: "logo_teatro_san_martin.png",
-      image: "imagen_concierto_sinfonico.jpg",
+      // image: "imagen_concierto_sinfonico.jpg",
       responsiveImage: "responsive_concierto_sinfonico.jpg",
     },
     {
@@ -327,7 +327,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Cámara de Artesanos de Tucumán",
       website: "https://www.feriaartesaniastucuman.com",
       logo: "logo_feria_artesanias.png",
-      image: "imagen_feria_artesanias.jpg",
+      // image: "imagen_feria_artesanias.jpg",
       responsiveImage: "responsive_feria_artesanias.jpg",
     },
     {
@@ -367,7 +367,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Universidad Nacional de Ingeniería",
       website: "https://www.seminarioenergias.org",
       logo: "logo_seminario_energia.png",
-      image: "imagen_seminario_energia.jpg",
+      // image: "imagen_seminario_energia.jpg",
       responsiveImage: "responsive_seminario_energia.jpg",
     },
     {
@@ -411,7 +411,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Grupo de Teatro 'Elenco Libre'",
       website: false,
       logo: "logo_grupo_teatro.png",
-      image: "imagen_obra_teatro.jpg",
+      // image: "imagen_obra_teatro.jpg",
       responsiveImage: "responsive_obra_teatro.jpg",
     },
     {
@@ -450,7 +450,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Adventure Sports S.A.",
       website: "https://www.desafiotafi.com",
       logo: "logo_desafio_tafi.png",
-      image: "imagen_carrera_montana.jpg",
+      // image: "imagen_carrera_montana.jpg",
       responsiveImage: "responsive_carrera_montana.jpg",
     },
     {
@@ -489,7 +489,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Emprende Tucumán",
       website: "https://www.emprendetucuman.com.ar/capacitaciones",
       logo: "logo_emprende_tucuman.png",
-      image: "imagen_capacitacion_emprendedores.jpg",
+      // image: "imagen_capacitacion_emprendedores.jpg",
       responsiveImage: "responsive_capacitacion_emprendedores.jpg",
     },
     {
@@ -528,7 +528,7 @@ export const EventsProvider = ({ children }) => {
       producer: false,
       website: "https://www.medioambiente.tucuman.gov.ar",
       logo: "logo_legislatura.png",
-      image: "imagen_debate_publico.jpg",
+      // image: "imagen_debate_publico.jpg",
       responsiveImage: "responsive_debate_publico.jpg",
     },
     {
@@ -567,7 +567,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Instituto de Investigación en IA",
       website: "https://www.conferenciaia.org",
       logo: "logo_ia_conference.png",
-      image: "imagen_ia_conference.jpg",
+      // image: "imagen_ia_conference.jpg",
       responsiveImage: "responsive_ia_conference.jpg",
     },
     {
@@ -605,7 +605,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Chefs de Tucumán",
       website: "https://www.saborestucuman.com",
       logo: "logo_sabores_tucuman.png",
-      image: "imagen_sabores_tucuman.jpg",
+      // image: "imagen_sabores_tucuman.jpg",
       responsiveImage: "responsive_sabores_tucuman.jpg",
     },
     {
@@ -644,7 +644,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Club de Fotografía Tucumán",
       website: "https://www.fotografianaturaleza.com.ar",
       logo: "logo_taller_foto.png",
-      image: "imagen_taller_foto.jpg",
+      // image: "imagen_taller_foto.jpg",
       responsiveImage: "responsive_taller_foto.jpg",
     },
     {
@@ -683,7 +683,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Argentina de Colegios de Abogados",
       website: "https://www.congresoabogacia.com.ar",
       logo: "logo_congreso_abogados.png",
-      image: "imagen_congreso_abogados.jpg",
+      // image: "imagen_congreso_abogados.jpg",
       responsiveImage: "responsive_congreso_abogados.jpg",
     },
     {
@@ -723,7 +723,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Tucumana de Teatristas",
       website: "https://www.festivalteatroindependiente.com.ar",
       logo: "logo_festival_teatro.png",
-      image: "imagen_festival_teatro.jpg",
+      // image: "imagen_festival_teatro.jpg",
       responsiveImage: "responsive_festival_teatro.jpg",
     },
     {
@@ -762,7 +762,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Consultora Proyectos S.A.",
       website: "https://www.gestionproyectos.com",
       logo: "logo_seminario_proyectos.png",
-      image: "imagen_seminario_proyectos.jpg",
+      // image: "imagen_seminario_proyectos.jpg",
       responsiveImage: "responsive_seminario_proyectos.jpg",
     },
     {
@@ -801,7 +801,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Argentina de Ajedrez",
       website: "https://www.torneoajedrez.com.ar",
       logo: "logo_torneo_ajedrez.png",
-      image: "imagen_torneo_ajedrez.jpg",
+      // image: "imagen_torneo_ajedrez.jpg",
       responsiveImage: "responsive_torneo_ajedrez.jpg",
     },
     {
@@ -840,7 +840,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Facultad de Humanidades",
       website: "https://www.jornadassoc.edu.ar",
       logo: "logo_jornadas_sociales.png",
-      image: "imagen_jornadas_sociales.jpg",
+      // image: "imagen_jornadas_sociales.jpg",
       responsiveImage: "responsive_jornadas_sociales.jpg",
     },
     {
@@ -879,7 +879,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Tucumán Fashion Week",
       website: "https://www.tucumanfashionweek.com",
       logo: "logo_desfile_moda.png",
-      image: "imagen_desfile_moda.jpg",
+      // image: "imagen_desfile_moda.jpg",
       responsiveImage: "responsive_desfile_moda.jpg",
     },
     {
@@ -917,7 +917,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Nacional de Estudiantes de Ingeniería",
       website: "https://www.encuentroingenieria.com.ar",
       logo: "logo_encuentro_ingenieria.png",
-      image: "imagen_encuentro_ingenieria.jpg",
+      // image: "imagen_encuentro_ingenieria.jpg",
       responsiveImage: "responsive_encuentro_ingenieria.jpg",
     },
     {
@@ -955,7 +955,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Producciones del Sur",
       website: "https://www.rocksinfonico.com.ar",
       logo: "logo_rock_sinfonico.png",
-      image: "imagen_rock_sinfonico.jpg",
+      // image: "imagen_rock_sinfonico.jpg",
       responsiveImage: "responsive_rock_sinfonico.jpg",
     },
     {
@@ -994,7 +994,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Sociedad de Escritores de Tucumán",
       website: false,
       logo: "logo_taller_escritura.png",
-      image: "imagen_taller_escritura.jpg",
+      // image: "imagen_taller_escritura.jpg",
       responsiveImage: "responsive_taller_escritura.jpg",
     },
     {
@@ -1033,7 +1033,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Tucumana de Ciclismo",
       website: "https://www.vueltatucuman.com",
       logo: "logo_vuelta_bicicleta.png",
-      image: "imagen_vuelta_bicicleta.jpg",
+      // image: "imagen_vuelta_bicicleta.jpg",
       responsiveImage: "responsive_vuelta_bicicleta.jpg",
     },
     {
@@ -1072,7 +1072,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Digital Trends S.A.",
       website: "https://www.marketingdigitalavanzado.com",
       logo: "logo_seminario_marketing_avanzado.png",
-      image: "imagen_seminario_marketing_avanzado.jpg",
+      // image: "imagen_seminario_marketing_avanzado.jpg",
       responsiveImage: "responsive_seminario_marketing_avanzado.jpg",
     },
     {
@@ -1111,7 +1111,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Bibliotecarios de Argentina",
       website: "https://www.encuentrobiliotecarios.org.ar",
       logo: "logo_encuentro_bibliotecarios.png",
-      image: "imagen_encuentro_bibliotecarios.jpg",
+      // image: "imagen_encuentro_bibliotecarios.jpg",
       responsiveImage: "responsive_encuentro_bibliotecarios.jpg",
     },
     {
@@ -1198,7 +1198,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Cineastas Independientes",
       website: "https://www.festivalcineindie.com.ar",
       logo: "logo_festival_cine.png",
-      image: "imagen_festival_cine.jpg",
+      // image: "imagen_festival_cine.jpg",
       responsiveImage: "responsive_festival_cine.jpg",
     },
     {
@@ -1237,7 +1237,7 @@ export const EventsProvider = ({ children }) => {
       producer: "RoboKids Argentina",
       website: "https://www.robokidsargentina.com.ar",
       logo: "logo_taller_robotica.png",
-      image: "imagen_taller_robotica.jpg",
+      // image: "imagen_taller_robotica.jpg",
       responsiveImage: "responsive_taller_robotica.jpg",
     },
     {
@@ -1275,7 +1275,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Fundación Corazón Solidario",
       website: "https://www.maratonsolidaria.org.ar",
       logo: "logo_maraton_solidaria.png",
-      image: "imagen_maraton_solidaria.jpg",
+      // image: "imagen_maraton_solidaria.jpg",
       responsiveImage: "responsive_maraton_solidaria.jpg",
     },
     {
@@ -1314,7 +1314,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Sociedad Argentina de Biotecnología",
       website: "https://www.simposiobiotecnologia.org",
       logo: "logo_simposio_biotecnologia.png",
-      image: "imagen_simposio_biotecnologia.jpg",
+      // image: "imagen_simposio_biotecnologia.jpg",
       responsiveImage: "responsive_simposio_biotecnologia.jpg",
     },
     {
@@ -1353,7 +1353,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Academia de las Artes y Ciencias Cinematográficas",
       website: "https://www.premioscine.com.ar",
       logo: "logo_premios_cine.png",
-      image: "imagen_premios_cine.jpg",
+      // image: "imagen_premios_cine.jpg",
       responsiveImage: "responsive_premios_cine.jpg",
     },
     {
@@ -1391,7 +1391,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Agencia de Contenidos Creativos",
       website: "https://www.marketingcontenidos.com.ar",
       logo: "logo_taller_contenidos.png",
-      image: "imagen_taller_contenidos.jpg",
+      // image: "imagen_taller_contenidos.jpg",
       responsiveImage: "responsive_taller_contenidos.jpg",
     },
     {
@@ -1430,7 +1430,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Tucumana de Jazz",
       website: "https://www.festivaljazzinvierno.com.ar",
       logo: "logo_festival_jazz.png",
-      image: "imagen_festival_jazz.jpg",
+      // image: "imagen_festival_jazz.jpg",
       responsiveImage: "responsive_festival_jazz.jpg",
     },
     {
@@ -1469,7 +1469,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Latinoamericana de Medicina Interna",
       website: "https://www.congresomedicinainterna.lat",
       logo: "logo_congreso_medicina_interna.png",
-      image: "imagen_congreso_medicina_interna.jpg",
+      // image: "imagen_congreso_medicina_interna.jpg",
       responsiveImage: "responsive_congreso_medicina_interna.jpg",
     },
     {
@@ -1507,7 +1507,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Diseño Emprendedor",
       website: "https://www.disenoemprendedor.com.ar",
       logo: "logo_taller_diseno.png",
-      image: "imagen_taller_diseno.jpg",
+      // image: "imagen_taller_diseno.jpg",
       responsiveImage: "responsive_taller_diseno.jpg",
     },
     {
@@ -1549,7 +1549,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Ministerio de Cultura de la Nación",
       website: "https://www.festivaltango.gob.ar",
       logo: "logo_festival_tango.png",
-      image: "imagen_festival_tango.jpg",
+      // image: "imagen_festival_tango.jpg",
       responsiveImage: "responsive_festival_tango.jpg",
     },
     {
@@ -1588,7 +1588,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Instituto de Energía y Desarrollo Sostenible",
       website: "https://www.conferenciaenergia.org",
       logo: "logo_energia_renovable_conference.png",
-      image: "imagen_energia_renovable_conference.jpg",
+      // image: "imagen_energia_renovable_conference.jpg",
       responsiveImage: "responsive_energia_renovable_conference.jpg",
     },
     {
@@ -1619,25 +1619,25 @@ export const EventsProvider = ({ children }) => {
           fechaHasta: "2025-05-05",
           horaDesde: "15:00",
           horaHasta: "18:00",
-        }, // Lunes 5 de mayo
+        },
         {
           fechaDesde: "2025-05-12",
           fechaHasta: "2025-05-12",
           horaDesde: "15:00",
           horaHasta: "18:00",
-        }, // Lunes 12 de mayo
+        },
         {
           fechaDesde: "2025-05-19",
           fechaHasta: "2025-05-19",
           horaDesde: "15:00",
           horaHasta: "18:00",
-        }, // Lunes 19 de mayo
+        },
         {
           fechaDesde: "2025-05-26",
           fechaHasta: "2025-05-26",
           horaDesde: "15:00",
           horaHasta: "18:00",
-        }, // Lunes 26 de mayo
+        },
       ],
       estimatedAttendance: {
         local: "50000",
@@ -1649,7 +1649,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Fundación El Libro",
       website: "https://www.feriadellibro.com.ar",
       logo: "logo_feria_libro.png",
-      image: "imagen_feria_libro.jpg",
+      image: "/carrouselEvents/feriadellibro.png",
       responsiveImage: "responsive_feria_libro.jpg",
     },
     {
@@ -1687,7 +1687,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Code Academy Tucumán",
       website: "https://www.codeacademytucuman.com.ar",
       logo: "logo_taller_programacion.png",
-      image: "imagen_taller_programacion.jpg",
+      // image: "imagen_taller_programacion.jpg",
       responsiveImage: "responsive_taller_programacion.jpg",
     },
     {
@@ -1725,7 +1725,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Natación",
       website: false,
       logo: "logo_campeonato_natacion.png",
-      image: "imagen_campeonato_natacion.jpg",
+      // image: "imagen_campeonato_natacion.jpg",
       responsiveImage: "responsive_campeonato_natacion.jpg",
     },
     {
@@ -1764,7 +1764,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Historiadores Argentinos",
       website: "https://www.simposiohistoria.org.ar",
       logo: "logo_simposio_historia.png",
-      image: "imagen_simposio_historia.jpg",
+      // image: "imagen_simposio_historia.jpg",
       responsiveImage: "responsive_simposio_historia.jpg",
     },
     {
@@ -1803,7 +1803,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Comedy Club Tucumán",
       website: "https://www.comedyclubtucuman.com.ar",
       logo: "logo_standup_comedy.png",
-      image: "imagen_standup_comedy.jpg",
+      // image: "imagen_standup_comedy.jpg",
       responsiveImage: "responsive_standup_comedy.jpg",
     },
     {
@@ -1841,7 +1841,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Liderazgo Inteligente S.A.",
       website: "https://www.inteligenciaemocional.com",
       logo: "logo_taller_ie.png",
-      image: "imagen_taller_ie.jpg",
+      // image: "imagen_taller_ie.jpg",
       responsiveImage: "responsive_taller_ie.jpg",
     },
     {
@@ -1880,7 +1880,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Ministerio de Educación de la Provincia",
       website: "https://www.olimpiadasmatematicas.gob.ar",
       logo: "logo_olimpiadas_matematica.png",
-      image: "imagen_olimpiadas_matematica.jpg",
+      // image: "imagen_olimpiadas_matematica.jpg",
       responsiveImage: "responsive_olimpiadas_matematica.jpg",
     },
     {
@@ -1919,7 +1919,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Cámara de Cerveceros Artesanales",
       website: "https://www.festivalcervezaartesanal.com.ar",
       logo: "logo_festival_cerveza.png",
-      image: "imagen_festival_cerveza.jpg",
+      // image: "imagen_festival_cerveza.jpg",
       responsiveImage: "responsive_festival_cerveza.jpg",
     },
     {
@@ -1958,7 +1958,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Sociedad Argentina de Cardiología Pediátrica",
       website: "https://www.congresocardiopediatrica.com.ar",
       logo: "logo_congreso_cardio_pediatrica.png",
-      image: "imagen_congreso_cardio_pediatrica.jpg",
+      // image: "imagen_congreso_cardio_pediatrica.jpg",
       responsiveImage: "responsive_congreso_cardio_pediatrica.jpg",
     },
     {
@@ -1997,7 +1997,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Oratoria Profesional",
       website: "https://www.oratoriaprofesional.com.ar",
       logo: "logo_taller_oratoria.png",
-      image: "imagen_taller_oratoria.jpg",
+      // image: "imagen_taller_oratoria.jpg",
       responsiveImage: "responsive_taller_oratoria.jpg",
     },
     {
@@ -2039,7 +2039,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Comisión Municipal de Folclore de Cosquín",
       website: "https://www.festivalfolklore.com",
       logo: "logo_festival_cosquin.png",
-      image: "imagen_festival_cosquin.jpg",
+      // image: "imagen_festival_cosquin.jpg",
       responsiveImage: "responsive_festival_cosquin.jpg",
     },
     {
@@ -2078,7 +2078,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Instituto de Investigaciones Ambientales",
       website: "https://www.conferenciambiente.org",
       logo: "logo_cambio_climatico_conference.png",
-      image: "imagen_cambio_climatico_conference.jpg",
+      // image: "imagen_cambio_climatico_conference.jpg",
       responsiveImage: "responsive_cambio_climatico_conference.jpg",
     },
     {
@@ -2121,7 +2121,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Ferias Argentinas S.A.",
       website: "https://www.fit.org.ar",
       logo: "logo_feria_turismo.png",
-      image: "imagen_feria_turismo.jpg",
+      // image: "imagen_feria_turismo.jpg",
       responsiveImage: "responsive_feria_turismo.jpg",
     },
     {
@@ -2159,7 +2159,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Tucumán Devs",
       website: "https://www.reacttucuman.com",
       logo: "logo_taller_react.png",
-      image: "imagen_taller_react.jpg",
+      // image: "imagen_taller_react.jpg",
       responsiveImage: "responsive_taller_react.jpg",
     },
     {
@@ -2197,7 +2197,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Confederación Argentina de Atletismo",
       website: "https://www.atletismoargentino.com",
       logo: "logo_campeonato_atletismo.png",
-      image: "imagen_campeonato_atletismo.jpg",
+      // image: "imagen_campeonato_atletismo.jpg",
       responsiveImage: "responsive_campeonato_atletismo.jpg",
     },
     {
@@ -2236,7 +2236,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Latinoamericana de Derecho Penal",
       website: "https://www.congresoderechopenal.lat",
       logo: "logo_congreso_derecho_penal.png",
-      image: "imagen_congreso_derecho_penal.jpg",
+      // image: "imagen_congreso_derecho_penal.jpg",
       responsiveImage: "responsive_congreso_derecho_penal.jpg",
     },
     {
@@ -2275,7 +2275,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Magic Productions",
       website: "https://www.magiashowtucuman.com.ar",
       logo: "logo_show_magia.png",
-      image: "imagen_show_magia.jpg",
+      // image: "imagen_show_magia.jpg",
       responsiveImage: "responsive_show_magia.jpg",
     },
     {
@@ -2314,7 +2314,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Fotógrafos Tucumanos",
       website: false,
       logo: "logo_taller_retrato.png",
-      image: "imagen_taller_retrato.jpg",
+      // image: "imagen_taller_retrato.jpg",
       responsiveImage: "responsive_taller_retrato.jpg",
     },
     {
@@ -2352,7 +2352,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Voleibol",
       website: false,
       logo: "logo_campeonato_voleibol.png",
-      image: "imagen_campeonato_voleibol.jpg",
+      // image: "imagen_campeonato_voleibol.jpg",
       responsiveImage: "responsive_campeonato_voleibol.jpg",
     },
     {
@@ -2391,7 +2391,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Estudios Latinoamericanos",
       website: "https://www.simposioliteratura.lat",
       logo: "logo_simposio_literatura.png",
-      image: "imagen_simposio_literatura.jpg",
+      // image: "imagen_simposio_literatura.jpg",
       responsiveImage: "responsive_simposio_literatura.jpg",
     },
     {
@@ -2430,7 +2430,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Electronic Beats Productions",
       website: "https://www.electronicbeatstucuman.com",
       logo: "logo_fiesta_electronica.png",
-      image: "imagen_fiesta_electronica.jpg",
+      // image: "imagen_fiesta_electronica.jpg",
       responsiveImage: "responsive_fiesta_electronica.jpg",
     },
     {
@@ -2469,7 +2469,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Instructores de Yoga",
       website: "https://www.yogashanti.com.ar",
       logo: "logo_taller_yoga.png",
-      image: "imagen_taller_yoga.jpg",
+      // image: "imagen_taller_yoga.jpg",
       responsiveImage: "responsive_taller_yoga.jpg",
     },
     {
@@ -2507,7 +2507,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Básquetbol",
       website: false,
       logo: "logo_campeonato_basquetbol.png",
-      image: "imagen_campeonato_basquetbol.jpg",
+      // image: "imagen_campeonato_basquetbol.jpg",
       responsiveImage: "responsive_campeonato_basquetbol.jpg",
     },
     {
@@ -2546,7 +2546,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Informática Médica",
       website: "https://www.simposioiamedicina.org.ar",
       logo: "logo_simposio_ia_medicina.png",
-      image: "imagen_simposio_ia_medicina.jpg",
+      // image: "imagen_simposio_ia_medicina.jpg",
       responsiveImage: "responsive_simposio_ia_medicina.jpg",
     },
     {
@@ -2585,7 +2585,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Salsa Tucumán Productions",
       website: "https://www.salsatucuman.com.ar",
       logo: "logo_noche_salsa.png",
-      image: "imagen_noche_salsa.jpg",
+      // image: "imagen_noche_salsa.jpg",
       responsiveImage: "responsive_noche_salsa.jpg",
     },
     {
@@ -2624,7 +2624,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Practicantes de Mindfulness",
       website: "https://www.mindfulnesstucuman.com",
       logo: "logo_taller_mindfulness.png",
-      image: "imagen_taller_mindfulness.jpg",
+      // image: "imagen_taller_mindfulness.jpg",
       responsiveImage: "responsive_taller_mindfulness.jpg",
     },
     {
@@ -2662,7 +2662,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Unión de Rugby de Tucumán",
       website: false,
       logo: "logo_campeonato_rugby.png",
-      image: "imagen_campeonato_rugby.jpg",
+      // image: "imagen_campeonato_rugby.jpg",
       responsiveImage: "responsive_campeonato_rugby.jpg",
     },
     {
@@ -2701,7 +2701,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Nanotecnología",
       website: "https://www.simposionanotecnologia.org.ar",
       logo: "logo_simposio_nanotecnologia.png",
-      image: "imagen_simposio_nanotecnologia.jpg",
+      // image: "imagen_simposio_nanotecnologia.jpg",
       responsiveImage: "responsive_simposio_nanotecnologia.jpg",
     },
     {
@@ -2739,7 +2739,7 @@ export const EventsProvider = ({ children }) => {
       producer: "La Clave Producciones",
       website: false,
       logo: "logo_noche_karaoke.png",
-      image: "imagen_noche_karaoke.jpg",
+      //// image: "imagen_noche_karaoke.jpg",
       responsiveImage: "responsive_noche_karaoke.jpg",
     },
     {
@@ -2778,7 +2778,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Sapore Escuela de Cocina",
       website: "https://www.saporecocina.com.ar",
       logo: "logo_taller_italiana.png",
-      image: "imagen_taller_italiana.jpg",
+      // image: "imagen_taller_italiana.jpg",
       responsiveImage: "responsive_taller_italiana.jpg",
     },
     {
@@ -2816,7 +2816,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Tenis",
       website: false,
       logo: "logo_campeonato_tenis.png",
-      image: "imagen_campeonato_tenis.jpg",
+      // image: "imagen_campeonato_tenis.jpg",
       responsiveImage: "responsive_campeonato_tenis.jpg",
     },
     {
@@ -2855,7 +2855,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Salud y Ambiente",
       website: "https://www.simposiocambioclimaticoysalud.org.ar",
       logo: "logo_simposio_clima_salud.png",
-      image: "imagen_simposio_clima_salud.jpg",
+      // image: "imagen_simposio_clima_salud.jpg",
       responsiveImage: "responsive_simposio_clima_salud.jpg",
     },
     {
@@ -2893,7 +2893,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Blue Note Producciones",
       website: "https://www.bluenotetucuman.com.ar",
       logo: "logo_noche_jazz.png",
-      image: "imagen_noche_jazz.jpg",
+      // image: "imagen_noche_jazz.jpg",
       responsiveImage: "responsive_noche_jazz.jpg",
     },
     {
@@ -2932,7 +2932,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Horticultores Urbanos",
       website: false,
       logo: "logo_taller_huerta.png",
-      image: "imagen_taller_huerta.jpg",
+      // image: "imagen_taller_huerta.jpg",
       responsiveImage: "responsive_taller_huerta.jpg",
     },
     {
@@ -2970,7 +2970,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Hockey",
       website: false,
       logo: "logo_campeonato_hockey.png",
-      image: "imagen_campeonato_hockey.jpg",
+      // image: "imagen_campeonato_hockey.jpg",
       responsiveImage: "responsive_campeonato_hockey.jpg",
     },
     {
@@ -3009,7 +3009,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Arquitectos Sustentables",
       website: "https://www.simposioenergiaconstruccion.org.ar",
       logo: "logo_simposio_energia_construccion.png",
-      image: "imagen_simposio_energia_construccion.jpg",
+      // image: "imagen_simposio_energia_construccion.jpg",
       responsiveImage: "responsive_simposio_energia_construccion.jpg",
     },
     {
@@ -3048,7 +3048,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Tributo Rock Producciones",
       website: false,
       logo: "logo_tributo_soda.png",
-      image: "imagen_tributo_soda.jpg",
+      // image: "imagen_tributo_soda.jpg",
       responsiveImage: "responsive_tributo_soda.jpg",
     },
     {
@@ -3086,7 +3086,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Músicos Independientes",
       website: false,
       logo: "logo_taller_canto.png",
-      image: "imagen_taller_canto.jpg",
+      // image: "imagen_taller_canto.jpg",
       responsiveImage: "responsive_taller_canto.jpg",
     },
     {
@@ -3124,7 +3124,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Deporte Adaptado",
       website: false,
       logo: "logo_campeonato_atletismo_adaptado.png",
-      image: "imagen_campeonato_atletismo_adaptado.jpg",
+      // image: "imagen_campeonato_atletismo_adaptado.jpg",
       responsiveImage: "responsive_campeonato_atletismo_adaptado.jpg",
     },
     {
@@ -3162,7 +3162,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Críticos de Arte",
       website: "https://www.simposioarteargentino.org.ar",
       logo: "logo_simposio_arte_argentino.png",
-      image: "imagen_simposio_arte_argentino.jpg",
+      // image: "imagen_simposio_arte_argentino.jpg",
       responsiveImage: "responsive_simposio_arte_argentino.jpg",
     },
     {
@@ -3200,7 +3200,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Milonga Tucumán",
       website: "https://www.milongatucuman.com.ar",
       logo: "logo_noche_milonga.png",
-      image: "imagen_noche_milonga.jpg",
+      // image: "imagen_noche_milonga.jpg",
       responsiveImage: "responsive_noche_milonga.jpg",
     },
     {
@@ -3239,7 +3239,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Músicos Independientes",
       website: false,
       logo: "logo_taller_guitarra.png",
-      image: "imagen_taller_guitarra.jpg",
+      // image: "imagen_taller_guitarra.jpg",
       responsiveImage: "responsive_taller_guitarra.jpg",
     },
     {
@@ -3277,7 +3277,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Judo",
       website: false,
       logo: "logo_campeonato_judo.png",
-      image: "imagen_campeonato_judo.jpg",
+      // image: "imagen_campeonato_judo.jpg",
       responsiveImage: "responsive_campeonato_judo.jpg",
     },
     {
@@ -3315,7 +3315,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Literatura Infantil y Juvenil",
       website: "https://www.simposioliteraturainfantil.org.ar",
       logo: "logo_simposio_literatura_infantil.png",
-      image: "imagen_simposio_literatura_infantil.jpg",
+      // image: "imagen_simposio_literatura_infantil.jpg",
       responsiveImage: "responsive_simposio_literatura_infantil.jpg",
     },
     {
@@ -3353,7 +3353,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Salsa Cubana Tucumán",
       website: false,
       logo: "logo_noche_salsa_cubana.png",
-      image: "imagen_noche_salsa_cubana.jpg",
+      // image: "imagen_noche_salsa_cubana.jpg",
       responsiveImage: "responsive_noche_salsa_cubana.jpg",
     },
     {
@@ -3392,7 +3392,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Artistas Plásticos",
       website: false,
       logo: "logo_taller_dibujo.png",
-      image: "imagen_taller_dibujo.jpg",
+      // image: "imagen_taller_dibujo.jpg",
       responsiveImage: "responsive_taller_dibujo.jpg",
     },
     {
@@ -3430,7 +3430,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Golf",
       website: false,
       logo: "logo_campeonato_golf.png",
-      image: "imagen_campeonato_golf.jpg",
+      // image: "imagen_campeonato_golf.jpg",
       responsiveImage: "responsive_campeonato_golf.jpg",
     },
     {
@@ -3469,7 +3469,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Derecho del Trabajo",
       website: "https://www.simposioderecholaboral.org.ar",
       logo: "logo_simposio_derecho_laboral.png",
-      image: "imagen_simposio_derecho_laboral.jpg",
+      // image: "imagen_simposio_derecho_laboral.jpg",
       responsiveImage: "responsive_simposio_derecho_laboral.jpg",
     },
     {
@@ -3508,7 +3508,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Tango Porteño Producciones",
       website: "https://www.laviruta.com.ar",
       logo: "logo_noche_tango_clasico.png",
-      image: "imagen_noche_tango_clasico.jpg",
+      // image: "imagen_noche_tango_clasico.jpg",
       responsiveImage: "responsive_noche_tango_clasico.jpg",
     },
     {
@@ -3547,7 +3547,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Grupo Fotográfico 'Urbana'",
       website: false,
       logo: "logo_taller_foto_urbana.png",
-      image: "imagen_taller_foto_urbana.jpg",
+      // image: "imagen_taller_foto_urbana.jpg",
       responsiveImage: "responsive_taller_foto_urbana.jpg",
     },
     {
@@ -3586,7 +3586,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Ajedrez",
       website: false,
       logo: "logo_campeonato_ajedrez_juvenil.png",
-      image: "imagen_campeonato_ajedrez_juvenil.jpg",
+      // // image: "carrouselEvents/cidc.png",
       responsiveImage: "responsive_campeonato_ajedrez_juvenil.jpg",
     },
     {
@@ -3625,7 +3625,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Lingüística Aplicada de Argentina",
       website: "https://www.simposiolinguisticaaplicada.org.ar",
       logo: "logo_simposio_linguistica.png",
-      image: "imagen_simposio_linguistica.jpg",
+      // image: "imagen_simposio_linguistica.jpg",
       responsiveImage: "responsive_simposio_linguistica.jpg",
     },
     {
@@ -3663,7 +3663,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Comedy Club Tucumán",
       website: "https://www.comedyclubtucuman.com.ar",
       logo: "logo_standup_especial.png",
-      image: "imagen_standup_especial.jpg",
+      // image: "imagen_standup_especial.jpg",
       responsiveImage: "responsive_standup_especial.jpg",
     },
     {
@@ -3701,7 +3701,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Artistas Plásticos",
       website: false,
       logo: "logo_taller_acuarela.png",
-      image: "imagen_taller_acuarela.jpg",
+      // image: "imagen_taller_acuarela.jpg",
       responsiveImage: "responsive_taller_acuarela.jpg",
     },
     {
@@ -3739,7 +3739,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Karate",
       website: false,
       logo: "logo_campeonato_karate.png",
-      image: "imagen_campeonato_karate.jpg",
+      // image: "imagen_campeonato_karate.jpg",
       responsiveImage: "responsive_campeonato_karate.jpg",
     },
     {
@@ -3778,7 +3778,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Colegio de Traductores Públicos",
       website: "https://www.simposiotraduccion.org.ar",
       logo: "logo_simposio_traduccion.png",
-      image: "imagen_simposio_traduccion.jpg",
+      // image: "imagen_simposio_traduccion.jpg",
       responsiveImage: "responsive_simposio_traduccion.jpg",
     },
     {
@@ -3817,7 +3817,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Peña El Cardón Producciones",
       website: false,
       logo: "logo_noche_folklore.png",
-      image: "imagen_noche_folklore.jpg",
+      // image: "imagen_noche_folklore.jpg",
       responsiveImage: "responsive_noche_folklore.jpg",
     },
     {
@@ -3855,7 +3855,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Cineastas Tucumanos",
       website: false,
       logo: "logo_taller_guion.png",
-      image: "imagen_taller_guion.jpg",
+      // image: "imagen_taller_guion.jpg",
       responsiveImage: "responsive_taller_guion.jpg",
     },
     {
@@ -3893,7 +3893,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Boxeo",
       website: false,
       logo: "logo_campeonato_boxeo.png",
-      image: "imagen_campeonato_boxeo.jpg",
+      // image: "imagen_campeonato_boxeo.jpg",
       responsiveImage: "responsive_campeonato_boxeo.jpg",
     },
     {
@@ -3931,7 +3931,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Filosofía",
       website: "https://www.simposiofilosofia.org.ar",
       logo: "logo_simposio_filosofia.png",
-      image: "imagen_simposio_filosofia.jpg",
+      // image: "imagen_simposio_filosofia.jpg",
       responsiveImage: "responsive_simposio_filosofia.jpg",
     },
     {
@@ -3969,7 +3969,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Karaoke Nights Tucumán",
       website: false,
       logo: "logo_karaoke_especial.png",
-      image: "imagen_karaoke_especial.jpg",
+      // image: "imagen_karaoke_especial.jpg",
       responsiveImage: "responsive_karaoke_especial.jpg",
     },
     {
@@ -4007,7 +4007,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Ceramistas Tucumanos",
       website: false,
       logo: "logo_taller_ceramica.png",
-      image: "imagen_taller_ceramica.jpg",
+      // image: "imagen_taller_ceramica.jpg",
       responsiveImage: "responsive_taller_ceramica.jpg",
     },
     {
@@ -4045,7 +4045,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Esgrima",
       website: false,
       logo: "logo_campeonato_esgrima.png",
-      image: "imagen_campeonato_esgrima.jpg",
+      // image: "imagen_campeonato_esgrima.jpg",
       responsiveImage: "responsive_campeonato_esgrima.jpg",
     },
     {
@@ -4083,7 +4083,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación Argentina de Neurociencias",
       website: "https://www.simposioneurociencia.org.ar",
       logo: "logo_simposio_neurociencia.png",
-      image: "imagen_simposio_neurociencia.jpg",
+      // image: "imagen_simposio_neurociencia.jpg",
       responsiveImage: "responsive_simposio_neurociencia.jpg",
     },
     {
@@ -4121,7 +4121,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Orquesta Sinfónica de Tucumán",
       website: false,
       logo: "logo_noche_clasica.png",
-      image: "imagen_noche_clasica.jpg",
+      // image: "imagen_noche_clasica.jpg",
       responsiveImage: "responsive_noche_clasica.jpg",
     },
     {
@@ -4159,7 +4159,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Grupo Fotográfico 'Nocturna'",
       website: false,
       logo: "logo_taller_foto_nocturna.png",
-      image: "imagen_taller_foto_nocturna.jpg",
+      // image: "imagen_taller_foto_nocturna.jpg",
       responsiveImage: "responsive_taller_foto_nocturna.jpg",
     },
     {
@@ -4197,7 +4197,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Federación Tucumana de Natación",
       website: false,
       logo: "logo_campeonato_natacion_artistica.png",
-      image: "imagen_campeonato_natacion_artistica.jpg",
+      // image: "imagen_campeonato_natacion_artistica.jpg",
       responsiveImage: "responsive_campeonato_natacion_artistica.jpg",
     },
     {
@@ -4235,7 +4235,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Academia Argentina de Letras",
       website: "https://www.simposiogauchesco.org.ar",
       logo: "logo_simposio_gauchesco.png",
-      image: "imagen_simposio_gauchesco.jpg",
+      // image: "imagen_simposio_gauchesco.jpg",
       responsiveImage: "responsive_simposio_gauchesco.jpg",
     },
     {
@@ -4273,7 +4273,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Tango Fusion Productions",
       website: false,
       logo: "logo_noche_tango_electronico.png",
-      image: "imagen_noche_tango_electronico.jpg",
+      // image: "imagen_noche_tango_electronico.jpg",
       responsiveImage: "responsive_noche_tango_electronico.jpg",
     },
     {
@@ -4312,7 +4312,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Grupo de Teatro Juvenil",
       website: false,
       logo: "logo_taller_teatro_adolescentes.png",
-      image: "imagen_taller_teatro_adolescentes.jpg",
+      // image: "imagen_taller_teatro_adolescentes.jpg",
       responsiveImage: "responsive_taller_teatro_adolescentes.jpg",
     },
     {
@@ -4369,7 +4369,7 @@ export const EventsProvider = ({ children }) => {
       producer: "",
       website: "https://cardiologia.org/congreso2025",
       logo: "logo_cardiologia.png",
-      image: "imagen_congreso_cardio.jpg",
+      image: "/carrouselEvents/cidc.png",
       responsiveImage: "imagen_congreso_cardio_responsive.jpg",
     },
     {
@@ -4414,7 +4414,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Agencia Digital XYZ",
       website: "https://agenciaxyz.com/taller-marketing",
       logo: "logo_agenciaxyz.png",
-      image: "imagen_taller_marketing.jpg",
+      image: "/carrouselEvents/tmde.jpg",
       responsiveImage: "imagen_taller_marketing_responsive.jpg",
     },
     {
@@ -4483,8 +4483,8 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Cineastas Independientes",
       website: "https://festivaldecine.com",
       logo: "logo_festival_cine.png",
-      image: "imagen_festival_cine.jpg",
-      responsiveImage: "imagen_festival_cine_responsive.jpg",
+      // image: "imagen_festival_cine.jpg",
+      responsiveImage: "// imagen_festival_cine_responsive.jpg",
     },
     {
       nombre: "Seminario de Inteligencia Artificial",
@@ -4534,7 +4534,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Facultad de Informática",
       website: "https://unccba.edu.ar/seminario-ia",
       logo: "logo_unccba.png",
-      image: "imagen_seminario_ia.jpg",
+      // image: "imagen_seminario_ia.jpg",
       responsiveImage: "imagen_seminario_ia_responsive.jpg",
     },
     {
@@ -4573,7 +4573,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Liga Profesional de Fútbol",
       website: "https://ligaprofesional.com.ar",
       logo: "logo_liga_profesional.png",
-      image: "imagen_partido_futbol.jpg",
+      // image: "// imagen_partido_futbol.jpg",
       responsiveImage: "imagen_partido_futbol_responsive.jpg",
     },
     {
@@ -4620,7 +4620,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Consultora RH Global",
       website: "https://conferenciarh.com.ar",
       logo: "logo_rhglobal.png",
-      image: "imagen_conferencia_rh.jpg",
+      // image: "imagen_conferencia_rh.jpg",
       responsiveImage: "imagen_conferencia_rh_responsive.jpg",
     },
     {
@@ -4665,7 +4665,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Grupo Teatral Los Andes",
       website: "https://losteandinos.com.ar",
       logo: "logo_teatro_andes.png",
-      image: "imagen_obra_teatro.jpg",
+      image: "/carrouselEvents/lacomediafinal.png",
       responsiveImage: "imagen_obra_teatro_responsive.jpg",
     },
     {
@@ -4704,7 +4704,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Cámara Nacional Electoral",
       website: "https://electoralnacional.gob.ar",
       logo: "logo_cne.png",
-      image: "imagen_debate_presidencial.jpg",
+      // image: "imagen_debate_presidencial.jpg",
       responsiveImage: "imagen_debate_presidencial_responsive.jpg",
     },
     {
@@ -4743,7 +4743,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Chef Vegano Sofía Pérez",
       website: "https://sofiaperezvegan.com",
       logo: "logo_sofia_vegan.png",
-      image: "imagen_clase_cocina_vegana.jpg",
+      // image: "imagen_clase_cocina_vegana.jpg",
       responsiveImage: "imagen_clase_cocina_vegana_responsive.jpg",
     },
     {
@@ -4755,7 +4755,7 @@ export const EventsProvider = ({ children }) => {
       subtype: "Feria Artesanal",
       origen: "Asociativo / Sin fines de lucro",
       tema: "Arte y desenio",
-      frecuencia: "Estacional", // No está en tus opciones, pero podría ser "Irregular"
+      frecuencia: "Estacional",
       tipoRotacion: "Regional",
       mesasCoffeeBreak: false,
       cateringAlmuerzo: false,
@@ -4800,7 +4800,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Artesanos del NOA",
       website: "https://artesaniasnoa.com.ar",
       logo: "logo_artesanos_noa.png",
-      image: "imagen_feria_artesanias.jpg",
+      image: "/carrouselEvents/artesaniasregionales.png",
       responsiveImage: "imagen_feria_artesanias_responsive.jpg",
     },
     {
@@ -4851,7 +4851,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Cámara Argentina de Energías Renovables",
       website: "https://energiasrenovables.com.ar/simposio2025",
       logo: "logo_caer.png",
-      image: "imagen_simposio_energias.jpg",
+      // image: "imagen_simposio_energias.jpg",
       responsiveImage: "imagen_simposio_energias_responsive.jpg",
     },
     {
@@ -4890,7 +4890,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Cámara de la Industria Textil",
       website: "https://camaratextil.com.ar/reunion-negocios",
       logo: "logo_camara_textil.png",
-      image: "imagen_reunion_textil.jpg",
+      image: "/carrouselEvents/reuniondenegocios.png",
       responsiveImage: "imagen_reunion_textil_responsive.jpg",
     },
     {
@@ -5013,7 +5013,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Asociación de Artistas Visuales",
       website: "https://asociacionartistas.org.ar/expo-mayo",
       logo: "logo_aav.png",
-      image: "imagen_expo_arte.jpg",
+      // image: "imagen_expo_arte.jpg",
       responsiveImage: "imagen_expo_arte_responsive.jpg",
     },
     {
@@ -5058,7 +5058,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Academia de Programación Online",
       website: "https://academiaonline.com",
       logo: "logo_academia_online.png",
-      image: "imagen_taller_react.jpg",
+      // image: "imagen_taller_react.jpg",
       responsiveImage: "imagen_taller_react_responsive.jpg",
     },
     {
@@ -5097,7 +5097,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Andes Adventure Sports",
       website: "https://desafioandino.com",
       logo: "logo_andes_adventure.png",
-      image: "imagen_carrera_montana.jpg",
+      // image: "imagen_carrera_montana.jpg",
       responsiveImage: "imagen_carrera_montana_responsive.jpg",
     },
     {
@@ -5136,7 +5136,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Laboratorios Natural Beauty",
       website: "https://cosmeticosnaturales.com",
       logo: "logo_natural_beauty.png",
-      image: "imagen_lanzamiento_cosmeticos.jpg",
+      // image: "imagen_lanzamiento_cosmeticos.jpg",
       responsiveImage: "imagen_lanzamiento_cosmeticos_responsive.jpg",
     },
     {
@@ -5148,7 +5148,7 @@ export const EventsProvider = ({ children }) => {
       subtype: "Concierto",
       origen: "Gubernamental",
       tema: "Cultura",
-      frecuencia: "Semanal", // No está en tus opciones, podría ser "Irregular"
+      frecuencia: "Semanal",
       tipoRotacion: "Provincial",
       mesasCoffeeBreak: false,
       cateringAlmuerzo: false,
@@ -5175,7 +5175,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Secretaría de Cultura de la Provincia",
       website: "https://orquestasinfonica.tucuman.gov.ar",
       logo: "logo_sinfonica_tucuman.png",
-      image: "imagen_concierto_sinfonica.jpg",
+      image: "/carrouselEvents/cosp.jpg",
       responsiveImage: "imagen_concierto_sinfonica_responsive.jpg",
     },
     {
@@ -5214,7 +5214,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Legislatura de la Provincia de Salta",
       website: "https://legislaturasalta.gob.ar",
       logo: "logo_legislatura_salta.png",
-      image: "imagen_audiencia_publica.jpg",
+      // image: "imagen_audiencia_publica.jpg",
       responsiveImage: "imagen_audiencia_publica_responsive.jpg",
     },
     {
@@ -5225,7 +5225,7 @@ export const EventsProvider = ({ children }) => {
       type: "Otros",
       subtype: "Evento Benéfico",
       origen: "Asociativo / Sin fines de lucro",
-      tema: "Otros", // Podrías especificar más el tema si lo deseas
+      tema: "Otros", 
       frecuencia: "Anual",
       tipoRotacion: "Local",
       mesasCoffeeBreak: false,
@@ -5253,7 +5253,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Fundación Sonrisas de Esperanza",
       website: "https://fundacionsonrisas.org.ar/cena-anual",
       logo: "logo_fundacion_sonrisas.png",
-      image: "imagen_cena_benefica.jpg",
+      image: "/carrouselEvents/ebcg.jpg",
       responsiveImage: "imagen_cena_benefica_responsive.jpg",
     },
     {
@@ -5292,7 +5292,7 @@ export const EventsProvider = ({ children }) => {
       producer: "Instituto de Capacitación Profesional",
       website: "https://institutoprofesional.com.ar",
       logo: "logo_icp.png",
-      image: "imagen_entrega_diplomas.jpg",
+      // image: "imagen_entrega_diplomas.jpg",
       responsiveImage: "imagen_entrega_diplomas_responsive.jpg",
     },
     {
