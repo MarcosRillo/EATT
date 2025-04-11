@@ -17,30 +17,32 @@ export default function Home() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4 }}>
-      <Grid
-        container
-        justifyContent="space-between"
-        alignItems="center"
-        marginBottom="30px"
-      >
-        <Grid item>
-          <Typography variant="h5" component="h5" gutterBottom>
-            EATT & TCVB | Agenda de Eventos
-          </Typography>
+    <>
+      <Container sx={{ mt: 10 }}>
+        <Grid
+          container
+          justifyContent="space-between"
+          alignItems="center"
+          marginBottom="30px"
+        >
+          <Grid item>
+            <Typography variant="h5" component="h5" gutterBottom>
+              EATT & TCVB | Agenda de Eventos
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={handleAccederClick}
+            >
+              Acceder
+            </Button>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Button
-            variant="outlined"
-            color="primary"
-            onClick={handleAccederClick}
-          >
-            Acceder
-          </Button>
-        </Grid>
-      </Grid>
-      <ImageCarousel />
-      <PublicCalendar />
-    </Container>
+        <PublicCalendar />
+        <ImageCarousel />
+      </Container>
+    </>
   );
 }
