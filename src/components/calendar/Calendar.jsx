@@ -93,7 +93,7 @@ function PublicCalendar() {
       : events.filter((event) => event.type === selectedType);
 
   return (
-    <div style={{ marginBottom: "300px" }}>
+    <div>
       <FormControl sx={{ m: 3, minWidth: 120 }}>
         <InputLabel id="event-type-filter-label">Tipo de Evento</InputLabel>
         <Select

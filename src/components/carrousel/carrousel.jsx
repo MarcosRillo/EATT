@@ -80,7 +80,13 @@ const ImageCarousel = () => {
   };
 
   return (
-    <Box sx={{ mb: 3, position: "relative", height: "400px" }}>
+    <Box
+      sx={{
+        mt: 10,
+        position: "static",
+        height: "400px",
+      }}
+    >
       {upcomingFlyers.length > 0 ? (
         <Slider {...settings}>
           {upcomingFlyers.map((image, index) => (
@@ -89,8 +95,8 @@ const ImageCarousel = () => {
                 src={image}
                 alt={`Flyer Evento ${index + 1}`}
                 layout="cover"
-                width={200}
-                height={300}
+                width={300}
+                height={400}
                 objectFit="contain"
                 onError={(e) => {
                   console.error(`Error al cargar la imagen: ${image}`, e);
